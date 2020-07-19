@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Graph Convolutional Networks]]></title>
-    <url>%2F2020%2F07%2F18%2FGraph%20Convolutional%20Networks.html</url>
-    <content type="text"><![CDATA[一、概念介绍：卷积1.1卷积a.直观理解 格式: b.信号 b.数学推导2.基于”基”的信号合成与分解3.图网络的谱分析4.图卷积有什么问题5.ChebNet 与 GCN]]></content>
-      <categories>
-        <category>GNN</category>
-      </categories>
-      <tags>
-        <tag>GCN</tag>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Graph Convolutional Networks]]></title>
+    <title><![CDATA[TEST]]></title>
     <url>%2F2020%2F07%2F18%2FGCN%2FGCN.html</url>
-    <content type="text"><![CDATA[一、概念介绍：卷积1.1卷积a.直观理解 格式: b.信号 b.数学推导2.基于”基”的信号合成与分解3.图网络的谱分析4.图卷积有什么问题5.ChebNet 与 GCN]]></content>
+    <content type="text"><![CDATA[一、概念介绍：卷积1.1卷积a.直观理解 图1是原始 lena，是我们肉眼可以理解的空域信号。图2是将图1进行二维傅里叶变换后的频谱图，是我们肉眼无法直观理解的频率域信号的可视化结果。越靠近频谱图中心位置信号频率越低，即中心位置的信号是低频信号，对于空域图1中的像素变化很”慢”的光滑部分比如脸部皮肤和肩部。远离中心位置的信号是高频信号，对应图1中的头发、帽檐等变化”很快”的部分。 我们使用一个频域低通滤波器把图2中高频部分都过滤掉得到图4的频谱图（除了中心低频被保留，其余高频全部过滤），这个频域操作等价于在图1这个空域信号上，用对应的卷积函数进行卷积操作。频率过滤得到图4后，再使用傅里叶逆变换回到空间域图3，我们发现图3中高频纹理细节都没有了，剩下的低频光滑的内容。不同频率对应着不同强弱的能量。 从上面的例子我们发现，空间域的信号即一直图片，可以分解成频域不同频率的信号（不同频率的波）叠加，我们在频域对某些频率的信号进行处理，会反应到空域上相对应的原始信号上，等价于直接在空间域进行卷积操作。 b.信号卷积操作有时候也会被称为滤波操作，顾名思义就是过滤掉信号中的某些成分 (某些频率的波)。上面这句话隐含了3个意思：1）时域/空域信号可以转化成频域信号；2）信号在频域可以分解成多个频率的波；3）卷积可以对特定频率的波做处理。 b.数学推导首先介绍一维连续卷积的定义，f 和 g 的卷积定义如下，附上几乎每个老师上课都用过的动图： 2.基于”基”的信号合成与分解3.图网络的谱分析4.图卷积有什么问题5.ChebNet 与 GCN]]></content>
       <categories>
         <category>GNN</category>
       </categories>
