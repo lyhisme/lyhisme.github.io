@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[第一篇博客]]></title>
-    <url>%2F2020%2F07%2F18%2F%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2.html</url>
-    <content type="text"><![CDATA[第一次见面你好，同学！欢迎你使用基于hexo搭建的next主题的博客系统。 关于Markdown当你能够正常访问这个页面时，相信你已经知道以后写博客文章是基于Markdown语法的，请熟练使用他。 祝你好运]]></content>
+    <title><![CDATA[Graph Convolutional Networks]]></title>
+    <url>%2F2020%2F07%2F18%2FGraph%20Convolutional%20Networks.html</url>
+    <content type="text"><![CDATA[一、概念介绍：卷积1.1卷积a.直观理解 b.信号 b.数学推导2.基于”基”的信号合成与分解3.图网络的谱分析4.图卷积有什么问题5.ChebNet 与 GCN]]></content>
       <categories>
-        <category>develop</category>
-        <category>test</category>
+        <category>GNN</category>
       </categories>
       <tags>
-        <tag>linux</tag>
-        <tag>os</tag>
-        <tag>java</tag>
+        <tag>GCN</tag>
         <tag>python</tag>
       </tags>
   </entry>

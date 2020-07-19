@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lyhisme.github.io/"/>
-  <updated>2020-07-18T05:32:21.741Z</updated>
+  <updated>2020-07-19T03:33:21.495Z</updated>
   <id>https://www.lyhisme.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>第一篇博客</title>
-    <link href="https://www.lyhisme.github.io/2020/07/18/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2.html"/>
-    <id>https://www.lyhisme.github.io/2020/07/18/第一篇博客.html</id>
+    <title>Graph Convolutional Networks</title>
+    <link href="https://www.lyhisme.github.io/2020/07/18/Graph%20Convolutional%20Networks.html"/>
+    <id>https://www.lyhisme.github.io/2020/07/18/Graph Convolutional Networks.html</id>
     <published>2020-07-18T05:30:00.000Z</published>
-    <updated>2020-07-18T05:32:21.741Z</updated>
+    <updated>2020-07-19T03:33:21.495Z</updated>
     
     <summary type="html">
     
@@ -35,16 +35,10 @@
     
     </summary>
     
-      <category term="develop" scheme="https://www.lyhisme.github.io/categories/develop/"/>
-    
-      <category term="test" scheme="https://www.lyhisme.github.io/categories/develop/test/"/>
+      <category term="GNN" scheme="https://www.lyhisme.github.io/categories/GNN/"/>
     
     
-      <category term="linux" scheme="https://www.lyhisme.github.io/tags/linux/"/>
-    
-      <category term="os" scheme="https://www.lyhisme.github.io/tags/os/"/>
-    
-      <category term="java" scheme="https://www.lyhisme.github.io/tags/java/"/>
+      <category term="GCN" scheme="https://www.lyhisme.github.io/tags/GCN/"/>
     
       <category term="python" scheme="https://www.lyhisme.github.io/tags/python/"/>
     
