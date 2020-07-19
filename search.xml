@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Graph Convolutional Networks]]></title>
     <url>%2F2020%2F07%2F18%2FGraph%20Convolutional%20Networks.html</url>
-    <content type="text"><![CDATA[一、概念介绍：卷积1.1卷积a.直观理解 b.信号 b.数学推导2.基于”基”的信号合成与分解3.图网络的谱分析4.图卷积有什么问题5.ChebNet 与 GCN]]></content>
+    <content type="text"><![CDATA[一、概念介绍：卷积1.1卷积a.直观理解 格式: b.信号 b.数学推导2.基于”基”的信号合成与分解3.图网络的谱分析4.图卷积有什么问题5.ChebNet 与 GCN]]></content>
       <categories>
         <category>GNN</category>
       </categories>
