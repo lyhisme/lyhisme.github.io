@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lyhisme.github.io/"/>
-  <updated>2020-07-19T13:46:12.719Z</updated>
+  <updated>2020-07-20T02:56:35.772Z</updated>
   <id>https://www.lyhisme.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>TEST</title>
+    <title>Graph Convolutional Networks</title>
     <link href="https://www.lyhisme.github.io/2020/07/18/GCN/GCN.html"/>
     <id>https://www.lyhisme.github.io/2020/07/18/GCN/GCN.html</id>
     <published>2020-07-18T05:30:00.000Z</published>
-    <updated>2020-07-19T13:46:12.719Z</updated>
+    <updated>2020-07-20T02:56:35.772Z</updated>
     
     <summary type="html">
     
