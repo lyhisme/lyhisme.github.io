@@ -163,7 +163,8 @@
 <meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu6.png?raw=true">
 <meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu7.png?raw=true">
 <meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu8.png?raw=true">
-<meta property="og:updated_time" content="2020-07-27T12:20:45.734Z">
+<meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu9.png?raw=true">
+<meta property="og:updated_time" content="2020-07-27T12:33:51.121Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Graph Convolutional Networks">
 <meta name="twitter:description" content="一、概念介绍：卷积1.1卷积 空间域：空间域(spatial domain)也叫空域，即所说的像素域，在空域的处理就是在像素级的处理，如在像素级的图像叠加。通过傅立叶变换后，得到的是图像的频谱。表示图像的能量梯度。  频率域：频率域(frequency domain)任何一个波形都可以分解成多个正弦波之和。每个正弦波都有自己的频率和振幅。所以任意一个波形信号有自己的频率和振幅的集合。频率域就是空域">
@@ -475,7 +476,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-07-27 20:20:45" itemprop="dateModified" datetime="2020-07-27T20:20:45+08:00">2020-07-27</time>
+                <time title="修改时间：2020-07-27 20:33:51" itemprop="dateModified" datetime="2020-07-27T20:33:51+08:00">2020-07-27</time>
               
             
           </span>
@@ -528,7 +529,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.9k</span>
+                <span title="本文字数">2k</span>
               
 
               
@@ -587,9 +588,14 @@
 <h3 id="c-数学推导"><a href="#c-数学推导" class="headerlink" title="c.数学推导"></a>c.数学推导</h3><p>首先介绍一维连续卷积的定义，f 和 g 的卷积定义如下：</p>
 <div style="width: 80%; margin: auto"> <img src="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu1.jpg?raw=true" alt="tu1" title="tu1"> <img src="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu2.gif?raw=true" alt="tu2" title="tu2"> </div><br>简单概括卷积过程就是：旋转、平移、相乘、求和。如果被卷积张量和卷积核是二维、三维，甚至四维及以上，我们同样也可以有相同的定义——向这些维度分别滑动，分别做卷积，最后求和即可。下图为二维卷积：<br><div style="width: 80%; margin: auto"> <img src="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu4.gif?raw=true" alt="tu2" title="tu2"> </div>
 
-<h1 id="二-图的拉普拉斯矩阵"><a href="#二-图的拉普拉斯矩阵" class="headerlink" title="二.图的拉普拉斯矩阵"></a>二.图的拉普拉斯矩阵</h1><h2 id="1-1定义：-拉普拉斯矩阵L"><a href="#1-1定义：-拉普拉斯矩阵L" class="headerlink" title="1.1定义： 拉普拉斯矩阵L"></a>1.1定义： 拉普拉斯矩阵L</h2><p><center> L = D- A </center> 其中，L为Laplacian矩阵；D是顶点的度矩阵（对角矩阵），对角线上的元素依次为各个顶点的度（与该顶点相连的边的条数）；A是图的邻接矩阵。<br>计算方法实例：<div style="width: 80%; margin: auto"> <img src="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu5.jpeg?raw=true" alt="tu2" title="tu2"> </div> Laplacian矩阵具有良好的性质，它是对称半正定的。</p>
+<h1 id="二-图的拉普拉斯矩阵"><a href="#二-图的拉普拉斯矩阵" class="headerlink" title="二.图的拉普拉斯矩阵"></a>二.图的拉普拉斯矩阵</h1><h2 id="1-1定义：-拉普拉斯矩阵L"><a href="#1-1定义：-拉普拉斯矩阵L" class="headerlink" title="1.1定义： 拉普拉斯矩阵L"></a>1.1定义： 拉普拉斯矩阵L</h2><p><center> L = D- A </center> 其中，L为Laplacian矩阵；D是顶点的度矩阵（对角矩阵），对角线上的元素依次为各个顶点的度（与该顶点相连的边的条数）；A是图的邻接矩阵。<br>计算方法实例：<div style="width: 80%; margin: auto"> <img src="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu5.jpeg?raw=true" alt="tu2" title="tu2"> </div> </p>
 <h2 id="1-2Laplacian矩阵的谱分解-特征分解"><a href="#1-2Laplacian矩阵的谱分解-特征分解" class="headerlink" title="1.2Laplacian矩阵的谱分解(特征分解)"></a>1.2Laplacian矩阵的谱分解(特征分解)</h2><h3 id="a-求特征值和特征向量"><a href="#a-求特征值和特征向量" class="headerlink" title="a.求特征值和特征向量"></a>a.求特征值和特征向量</h3><p>λ为特征值，u为特征向量，则满足下式：<div style="width: 20%; margin: auto"> <img src="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu6.png?raw=true" alt="tu2" title="tu2"> </div></p>
-<h3 id="b-求特征分解"><a href="#b-求特征分解" class="headerlink" title="b.求特征分解"></a>b.求特征分解</h3><p>令 L是一个 N×N 的方阵，且有 N 个线性无关的特征向量 。这样， L可以被分解为：<div style="width: 50%; margin: auto"> <img src="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu7.png?raw=true" alt="tu2" title="tu2"> </div>其中，U是N×N方阵，且其第i列为L的特征向量ui，ui为列向量；<div style="width: 50%; margin: auto"> <img src="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu8.png?raw=true" alt="tu2" title="tu2"> </div>Λ是对角矩阵，其对角线上的元素为对应的特征值。</p>
+<h3 id="b-求特征分解"><a href="#b-求特征分解" class="headerlink" title="b.求特征分解"></a>b.求特征分解</h3><p>令 L是一个 N×N 的方阵，且有 N 个线性无关的特征向量 。这样， L可以被分解为：<div style="width: 50%; margin: auto"> <img src="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu7.png?raw=true" alt="tu2" title="tu2"> </div>其中，U是N×N方阵，且其第i列为L的特征向量ui，ui为列向量；<div style="width: 50%; margin: auto"> <img src="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu8.png?raw=true" alt="tu2" title="tu2"> </div>Λ是对角矩阵，其对角线上的元素为对应的特征值。<br>Laplacian矩阵是对称半正定的，具有良好的性质：</p>
+<ul>
+<li>有n个线性无关的特征向量；</li>
+<li>特征值非负；</li>
+<li>特征向量相互正交，即Q为正交矩阵。<br>那么拉普拉斯矩阵的谱分解形式为：<div style="width: 50%; margin: auto"> <img src="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu9.png?raw=true" alt="tu2" title="tu2"> </div></li>
+</ul>
 <h1 id="2-基于”基”的信号合成与分解"><a href="#2-基于”基”的信号合成与分解" class="headerlink" title="2.基于”基”的信号合成与分解"></a>2.基于”基”的信号合成与分解</h1><p>世界是稀疏的。比如任何一张图像都可以用一组固定的小图像块叠加而成。这里其实是在时域找到一组基（一组固定的小图像块）来分解信号。</p>
 <p>更有趣的是，这组基并不唯一。如上图所示，可以是左边这样的一组 DCT（离散余弦变换） 基；也可以是用 dictionary learning 学习出来的中间这样的一组基；不同组基向量的大小也是可以不同的，如右边小图像块的大小可以不同。</p>
 <p>上面的这组基是时域的，而我们要讲的 GNN 谱分析是从频域来分解的，不过原理都是类似的。下图是时域的一个方波信号，那么对应到频域就可以分解成各个不同频率和幅值的正弦波。（如果你用过示波器，这个过程就很好理解）</p>
