@@ -155,11 +155,13 @@
 <meta property="og:description" content="一、概念介绍：卷积1.1卷积 空间域：空间域(spatial domain)也叫空域，即所说的像素域，在空域的处理就是在像素级的处理，如在像素级的图像叠加。通过傅立叶变换后，得到的是图像的频谱。表示图像的能量梯度。 频率域：频率域(frequency domain)任何一个波形都可以分解成多个正弦波之和。每个正弦波都有自己的频率和振幅。所以任意一个波形信号有自己的频率和振幅的集合。频率域就是空域经">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu1.jpg?raw=true">
-<meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu3.gif?raw=true">
 <meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu2.gif?raw=true">
+<meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu3.gif?raw=true">
 <meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu4.gif?raw=true">
 <meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu5.jpeg?raw=true">
-<meta property="og:updated_time" content="2020-08-01T14:22:24.783Z">
+<meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu6.jpeg?raw=true">
+<meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu7.jpeg?raw=true">
+<meta property="og:updated_time" content="2020-08-01T16:13:51.313Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Graph Convolutional Networks">
 <meta name="twitter:description" content="一、概念介绍：卷积1.1卷积 空间域：空间域(spatial domain)也叫空域，即所说的像素域，在空域的处理就是在像素级的处理，如在像素级的图像叠加。通过傅立叶变换后，得到的是图像的频谱。表示图像的能量梯度。 频率域：频率域(frequency domain)任何一个波形都可以分解成多个正弦波之和。每个正弦波都有自己的频率和振幅。所以任意一个波形信号有自己的频率和振幅的集合。频率域就是空域经">
@@ -471,7 +473,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-08-01 22:22:24" itemprop="dateModified" datetime="2020-08-01T22:22:24+08:00">2020-08-01</time>
+                <time title="修改时间：2020-08-02 00:13:51" itemprop="dateModified" datetime="2020-08-02T00:13:51+08:00">2020-08-02</time>
               
             
           </span>
@@ -524,7 +526,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">6.9k</span>
+                <span title="本文字数">8.8k</span>
               
 
               
@@ -538,7 +540,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">6 分钟</span>
+                <span title="阅读时长">8 分钟</span>
               
             </div>
           
@@ -575,11 +577,11 @@
 <ul>
 <li>时域/空域信号可以转化成频域信号；</li>
 <li>信号在频域可以分解成多个频率的波；</li>
-<li>卷积可以对特定频率的波做处理。<div style="width: 60%; margin:0 auto"> <img src="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu3.gif?raw=true"> </div> <h3 id="c-数学推导"><a href="#c-数学推导" class="headerlink" title="c.数学推导"></a>c.数学推导</h3>首先介绍一维连续卷积的定义，f 和 g 的卷积定义如下：<br>$$( f * g ) ( x ) = \int _ { - \infty } ^ { + \infty } f ( \tau ) g ( x - \tau ) d \tau$$<div style="width: 80%; margin: auto">
+<li>卷积可以对特定频率的波做处理。<div style="width: 60%; margin:0 auto"> <img src="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu2.gif?raw=true"> </div> <h3 id="c-数学推导"><a href="#c-数学推导" class="headerlink" title="c.数学推导"></a>c.数学推导</h3>首先介绍一维连续卷积的定义，f 和 g 的卷积定义如下：<br>$$( f * g ) ( x ) = \int _ { - \infty } ^ { + \infty } f ( \tau ) g ( x - \tau ) d \tau$$<div style="width: 80%; margin: auto">
 
 </div></li>
 </ul>
-<p><img src="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu2.gif?raw=true"> </p>
+<p><img src="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu3.gif?raw=true"> </p>
  简单概括卷积过程就是：旋转、平移、相乘、求和。如果被卷积张量和卷积核是二维、三维，甚至四维及以上，我们同样也可以有相同的定义——向这些维度分别滑动，分别做卷积，最后求和即可。下图为二维卷积：
 <div style="width: 80%; margin: auto">
 
@@ -603,10 +605,15 @@
 <p>用数学式子描述一下，假设 $f(t)$ 和 $g(t)$ 是时域下的函数，对应 $F(w)$ 与 $G(w)$ 是傅里叶变换后的频域下的函数。$F$ 为傅里叶变换，$F ^ { - 1 } $ 是傅里叶逆变换，那么：<br>时域卷积定理：<br>$$F[f(t)*g(t)] = F(w)·G(w)$$<br>频域卷积定理：<br>$$F(w)*G(w) = 2π · F[f(t)·g(t)]$$ <br>$$F ^ { - 1 } [F(w)*G(w)] = 2π · f(t)·g(t)$$</p>
 <h3 id="b-Graph上卷积"><a href="#b-Graph上卷积" class="headerlink" title="b.Graph上卷积"></a>b.Graph上卷积</h3><p>$f$ 为待卷积函数，$h$ 为卷积核（根据需要设计）<br>$f*h $ 为卷积结果<br>$f$ 的傅里叶变换为 $ \hat { f }  = U^{T} f$<br>卷积核$h$ 的傅里叶变换写成对角矩阵的形式即为：$ \begin{pmatrix}{\hat { h } ( \lambda _ { 1 } )} &amp; {} &amp;{} \\ {}&amp; {    \ddots} &amp;{} \\ {}&amp;&amp;{}{\hat { h } ( \lambda _ { N } )} \end{pmatrix}$<br>$\hat { h } ( \lambda _ { l } ) = \sum _ { i = 1 } ^ { N } h ( i ) u _ { i } ^ { * } ( i )$是根据需要设计的卷积核$h$ 在图上的傅里叶变换。<br>两者的傅里叶变换乘积即为：$ \begin{pmatrix}{\hat { h } ( \lambda _ { 1 } )} &amp; {} &amp;{} \\ {}&amp; {    \ddots} &amp;{} \\ {}&amp;&amp;{}{\hat { h } ( \lambda _ { N } )} \end{pmatrix} U^{T} f$<br>再乘以$U$ 求两者傅里叶变换乘积的逆变换，则求出卷积：<br>$$ (f*h)_{G}=U \begin{pmatrix}{\hat { h } ( \lambda _ { 1 } )} &amp; {} &amp;{} \\ {}&amp; {    \ddots} &amp;{} \\ {}&amp;&amp;{}{\hat { h } ( \lambda _ { N } )} \end{pmatrix} U^{T} f $$</p>
 <p>$U$ 为特征向量，$f$ 为待卷积函数，重点在于设计含有（可训练）（共享参数）的卷积核$h$<br>卷积参数就是$diag(\hat { h } ( \lambda _ { l })$<br>很多论文中的图卷积公式：<br>$$(f*h)_{G}=U ((U^Th)    \odot(U^Tf)$$</p>
-<h1 id="四-深度学习中的GCN"><a href="#四-深度学习中的GCN" class="headerlink" title="四.深度学习中的GCN"></a>四.深度学习中的GCN</h1><h2 id="1-1第一代GCN："><a href="#1-1第一代GCN：" class="headerlink" title="1.1第一代GCN："></a>1.1第一代GCN：</h2><p><strong><em>Spectral Networks and Locally Connected Networks on Graph</em></strong>中简单粗暴地把$diag(\hat { h } ( \lambda _ { l })$变成了卷积核$diag( \theta_ { l })$,也就是说卷积核 $\hat { h }=g_{ \theta} ( \wedge )$ 。<br>则卷积公式为：<br>$$( g_{ \theta}*x )_ {G} = U g_{ \theta} ( \wedge ) U^{T} x$$<br>其中$ \theta = (\theta_{1},\theta_{2},\dots,\theta_{n})$，是权重参数（可学习的）；$x$ 就是图上对应每个顶点的 feature vector。</p>
+<h1 id="四-深度学习中的GCN"><a href="#四-深度学习中的GCN" class="headerlink" title="四.深度学习中的GCN"></a>四.深度学习中的GCN</h1><h2 id="1-1第一代GCN："><a href="#1-1第一代GCN：" class="headerlink" title="1.1第一代GCN："></a>1.1第一代GCN：</h2><p><strong><em>Spectral Networks and Locally Connected Networks on Graph</em></strong>中简单粗暴地把$diag(\hat { h } ( \lambda _ { l })$变成了卷积核$diag( \theta_ { l })$,也就是说卷积核 $\hat { h }=g_{ \theta} ( \wedge )$ ，$\wedge$ 是特征函数构成的对角矩阵。<br>则卷积公式为：<br>$$( g_{ \theta}*x )_ {G} = U g_{ \theta} ( \wedge ) U^{T} x$$<br>其中$ \theta = (\theta_{1},\theta_{2},\dots,\theta_{n})$，是权重参数（可学习的）；$x$ 就是图上对应每个顶点的 feature vector。</p>
 <p>该卷积核的缺点：<br>$\cdot$ 每一次前向传播，都要计算$ U$，$diag(\theta_{l})$及$U^{T}$三者的矩阵乘积，特别是对于大规模的图，计算的代价较高，也就是论文中$O(n^{2})$的计算复杂度；<br>$\cdot$ 卷积核不具有Spatial Localization；<br>$\cdot$ 卷积核需要n个参数。</p>
-<h2 id="1-2第二代GCN："><a href="#1-2第二代GCN：" class="headerlink" title="1.2第二代GCN："></a>1.2第二代GCN：</h2><p><strong><em>Convolutional Neural Networks on Graphs with Fast Localized Spectral Filtering</em></strong>中，把$\hat { h } ( \lambda _ { l })$巧妙地设计成了$\sum _ { j = 0 } ^ { K } \alpha _ { j } \lambda _ { l } ^ { j }$ 。<br>则卷积公式为：<br>$$( g_{ \theta}*x )_ {G} = U \sum _ { j = 0 } ^ { K } \alpha _ { j } \lambda _ { l } ^ { j } U^{T} x$$<br>又因为$L ^ { 2 } = U \Lambda U ^ { T } U \Lambda U ^ { T } = U \Lambda ^ { 2 } U ^ { T } $ 并且$U^T U = E $<br>进而则卷积公式为：<br>$$( g_{ \theta}*x )_ {G} = U \sum _ { j = 0 } ^ { K } \alpha _ { j } L^ { j } U^{T} x$$<br>其中$( \alpha _ { 0 } , \alpha _ { 1 } , \cdots , \alpha _ { K - 1 } )$是权重参数（可学习的）。<br>该卷积核的优点：<br>$\cdot$ 卷积核只有$K$ 个参数，并且一般$K$ 远小于$n$ ，参数的复杂度被大大降低了；<br>$\cdot$ 矩阵变换后不需要对拉普拉斯矩阵$L$ 进行特征分解，直接用$L$ 进行变换。但是要计算$L^ { j }$,计算复杂度还是$O(n^{2})$；<br>$\cdot$ 卷积核具有很好的spatial localiztion，$K$ 就是卷积核的receptive field，也就是说每次卷积会将中心顶点K-hop neighbor 上的feature进行加权求和，权重系数就是$\alpha _ { K }$。</p>
-<h1 id="3-图网络的谱分析"><a href="#3-图网络的谱分析" class="headerlink" title="3.图网络的谱分析"></a>3.图网络的谱分析</h1><h1 id="4-图卷积有什么问题"><a href="#4-图卷积有什么问题" class="headerlink" title="4.图卷积有什么问题"></a>4.图卷积有什么问题</h1><h1 id="5-ChebNet-与-GCN"><a href="#5-ChebNet-与-GCN" class="headerlink" title="5.ChebNet 与 GCN"></a>5.ChebNet 与 GCN</h1>
+<h2 id="1-2第二代GCN："><a href="#1-2第二代GCN：" class="headerlink" title="1.2第二代GCN："></a>1.2第二代GCN：</h2><p><strong><em>Convolutional Neural Networks on Graphs with Fast Localized Spectral Filtering</em></strong>中，把$\hat { h } ( \lambda _ { l })$巧妙地设计成了$\sum _ { j = 0 } ^ { K } \alpha _ { j } \lambda _ { l } ^ { j }$ 。<br>则卷积公式为：<br>$$( g_{ \theta}*x )_ {G} = U \sum _ { j = 0 } ^ { K } \alpha _ { j } \lambda _ { l } ^ { j } U^{T} x$$<br>又因为$L ^ { 2 } = U \Lambda U ^ { T } U \Lambda U ^ { T } = U \Lambda ^ { 2 } U ^ { T } $ 并且$U^T U = E $<br>进而则卷积公式为：<br>$$( g_{ \theta}*x )_ {G} = U \sum _ { j = 0 } ^ { K } \alpha _ { j } L^ { j } U^{T} x$$<br>其中$( \alpha _ { 0 } , \alpha _ { 1 } , \cdots , \alpha _ { K - 1 } )$是权重参数（可学习的）。<br>该卷积核的优点：<br>$\cdot$ 卷积核只有$K$ 个参数，并且一般$K$ 远小于$n$ ，参数的复杂度被大大降低了；<br>$\cdot$ 矩阵变换后不需要对拉普拉斯矩阵$L$ 进行特征分解，直接用$L$ 进行变换。但是要计算$L^ { j }$,计算复杂度还是$O(n^{2})$；<br>$\cdot$ 卷积核具有很好的spatial localiztion，$K$ 就是卷积核的receptive field，也就是说每次卷积会将中心顶点K-hop neighbor 上的feature进行加权求和，权重系数就是$\alpha _ { K }$。<br>下面以图为例：</p>
+<div style="width: 70%; margin: auto"> 
+
+<p><img src="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu6.jpeg?raw=true"><br><img src="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu7.jpeg?raw=true"> </p></div><p></p>
+<h2 id="1-3利用Chebyshev多项式作为卷积核："><a href="#1-3利用Chebyshev多项式作为卷积核：" class="headerlink" title="1.3利用Chebyshev多项式作为卷积核："></a>1.3利用Chebyshev多项式作为卷积核：</h2><p>利用Chebyshev多项式代替卷积核，就可以得到下式：<br>$$g _ { \theta } ( \Lambda ) \approx \sum _ { k = 0 } ^ { K - 1 } \beta _ { k } T _ { k } ( \tilde { \Lambda } )$$<br>其中，$T _ { k }$ 是$k$ 阶的Chebyshev多项式，$\beta _ { k }$ 是对应的系数（也就是训练中迭代更新的参数）。$\tilde { \Lambda }= \frac { 2 } { \lambda _ { m a x } }<br>{ \Lambda }-I$。进行这个shift变换的原因是：<br>第一类Chebyshev多项式的解析形式是   $T _ { k } ( x ) = \cos ( k \cdot \arccos ( x ) )$<br>因为 $\arccos (  )$ 函数，所以输入必须在 $[-1,1]$ 之间。<br>则卷积公式为：<br>$$( g_{ \theta}*x )_ {G} =  U \sum _ { k = 0 } ^ { K - 1 } \beta _ { k } T _ { k } ( \tilde { \Lambda } ) U ^ { T } x $$<br>因为Chebyshev多项式作用在对角矩阵上，不会影响矩阵运算。那就改变一下运算顺序，先把矩阵运算放进去:<br>$$( g_{ \theta}*x )_ {G} =   \sum _ { k = 0 } ^ { K - 1 } \beta _ { k } T _ { k } (U \tilde { \Lambda }U ^ { T } )  x $$<br>因为拉普拉斯矩阵$L  = U \Lambda U ^ { T } $ ，代入可以得:<br>$$( g_{ \theta}*x )_ {G} =   \sum _ { k = 0 } ^ { K - 1 } \beta _ { k } T _ { k } (\tilde {L})  x $$<br>其中，$\tilde { L }= \frac { 2 } { \lambda _ { m a x } } { L }-I$ 。这样变换的好处在于：计算过程无需再进行特征向量分解。<br>在实际运算过程中，可以利用Chebyshev多项式的性质，进行递推：<br>$$T _ { k } ( \tilde { L } ) = 2 \tilde { L } T _ { k - 1 } ( \tilde { L } ) - T _ { k - 2 } ( \tilde { L } )$$<br>$$T _ { 0 } ( \tilde { L } ) = I , T _ { 1 } ( \tilde { L } ) = \tilde { L }<br>$$<br>现在以拉普拉斯矩阵$L$为例，分析一下其普性质：<br>归一化的拉普拉斯矩阵为<br>$$L = I - D ^ { - 1 / 2 } A D ^ { - 1 / 2 }$$<br>根据其性质可以推断出：$\lambda _ { m a x } \approx 2$,则$\tilde { L } \approx { L }-I$</p>
+<p>若令$K=1$为一阶Chebyshev滤波器，则卷积公式为：<br>$$( g_{ \theta}*x )_ {G} = (\beta _ { 0 } I + \beta _ { 1 }( L-I))x $$<br>若令$K=2$为二阶Chebyshev滤波器，则卷积公式为：<br>$$( g_{ \theta}*x )_ {G} = (\beta _ { 0 } I + \beta _ { 1 }( L-I)++ \beta _ { 2 }( L-I)^2)x $$<br>整理可得：<br>$$( g_{ \theta}*x )_ {G} = ((\beta _ { 0 } -\beta _ { 1 }+\beta _ { 2 })I +( \beta _ { 1 }- 2\beta _ { 2})L++ \beta _ { 2 }(L^2))x $$<br>$$A = \left(\begin{matrix}0&amp;1&amp;1&amp;0&amp;0\\1&amp;0&amp;0&amp;1&amp;1\\1&amp;0&amp;0&amp;0&amp;1\\0&amp;1&amp;0&amp;0&amp;0\\0&amp;1&amp;1&amp;0&amp;0\end{matrix}\right)<br>$$</p>
+
       
     </div>
 
@@ -802,7 +809,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、概念介绍：卷积"><span class="nav-text">一、概念介绍：卷积</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1卷积"><span class="nav-text">1.1卷积</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-直观理解"><span class="nav-text">a.直观理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-信号"><span class="nav-text">b.信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c-数学推导"><span class="nav-text">c.数学推导</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-图的拉普拉斯矩阵"><span class="nav-text">二.图的拉普拉斯矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1定义：-拉普拉斯矩阵L"><span class="nav-text">1.1定义： 拉普拉斯矩阵L</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2Laplacian矩阵的谱分解-特征分解"><span class="nav-text">1.2Laplacian矩阵的谱分解(特征分解)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-求特征值和特征向量"><span class="nav-text">a.求特征值和特征向量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-求特征分解"><span class="nav-text">b.求特征分解</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-图上的傅里叶变换与卷积"><span class="nav-text">三.图上的傅里叶变换与卷积</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1Graph上的傅里叶变换"><span class="nav-text">1.1Graph上的傅里叶变换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-传统傅里叶变换："><span class="nav-text">a.传统傅里叶变换：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-Graph上的傅里叶变换"><span class="nav-text">b.Graph上的傅里叶变换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2Graph上的卷积"><span class="nav-text">1.2Graph上的卷积</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-传统卷积定理"><span class="nav-text">a.传统卷积定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-Graph上卷积"><span class="nav-text">b.Graph上卷积</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-深度学习中的GCN"><span class="nav-text">四.深度学习中的GCN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1第一代GCN："><span class="nav-text">1.1第一代GCN：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2第二代GCN："><span class="nav-text">1.2第二代GCN：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-图网络的谱分析"><span class="nav-text">3.图网络的谱分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-图卷积有什么问题"><span class="nav-text">4.图卷积有什么问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-ChebNet-与-GCN"><span class="nav-text">5.ChebNet 与 GCN</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、概念介绍：卷积"><span class="nav-text">一、概念介绍：卷积</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1卷积"><span class="nav-text">1.1卷积</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-直观理解"><span class="nav-text">a.直观理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-信号"><span class="nav-text">b.信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c-数学推导"><span class="nav-text">c.数学推导</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-图的拉普拉斯矩阵"><span class="nav-text">二.图的拉普拉斯矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1定义：-拉普拉斯矩阵L"><span class="nav-text">1.1定义： 拉普拉斯矩阵L</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2Laplacian矩阵的谱分解-特征分解"><span class="nav-text">1.2Laplacian矩阵的谱分解(特征分解)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-求特征值和特征向量"><span class="nav-text">a.求特征值和特征向量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-求特征分解"><span class="nav-text">b.求特征分解</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-图上的傅里叶变换与卷积"><span class="nav-text">三.图上的傅里叶变换与卷积</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1Graph上的傅里叶变换"><span class="nav-text">1.1Graph上的傅里叶变换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-传统傅里叶变换："><span class="nav-text">a.传统傅里叶变换：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-Graph上的傅里叶变换"><span class="nav-text">b.Graph上的傅里叶变换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2Graph上的卷积"><span class="nav-text">1.2Graph上的卷积</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-传统卷积定理"><span class="nav-text">a.传统卷积定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-Graph上卷积"><span class="nav-text">b.Graph上卷积</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-深度学习中的GCN"><span class="nav-text">四.深度学习中的GCN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1第一代GCN："><span class="nav-text">1.1第一代GCN：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2第二代GCN："><span class="nav-text">1.2第二代GCN：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3利用Chebyshev多项式作为卷积核："><span class="nav-text">1.3利用Chebyshev多项式作为卷积核：</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -842,7 +849,7 @@
       <i class="fa fa-area-chart"> 站点字数合计:</i>
     </span>
     
-    <span title="站点总字数">7k</span>
+    <span title="站点总字数">9k</span>
   
   
 </div>
@@ -1427,7 +1434,7 @@
     }
   });
 </script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
     
   
