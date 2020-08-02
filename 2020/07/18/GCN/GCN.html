@@ -159,9 +159,9 @@
 <meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu3.gif?raw=true">
 <meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu4.gif?raw=true">
 <meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu5.jpeg?raw=true">
-<meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu6.jpeg?raw=true">
-<meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu7.jpeg?raw=true">
-<meta property="og:updated_time" content="2020-08-01T16:13:51.313Z">
+<meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu6.jpg?raw=true">
+<meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu7.jpg?raw=true">
+<meta property="og:updated_time" content="2020-08-02T05:25:24.768Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Graph Convolutional Networks">
 <meta name="twitter:description" content="一、概念介绍：卷积1.1卷积 空间域：空间域(spatial domain)也叫空域，即所说的像素域，在空域的处理就是在像素级的处理，如在像素级的图像叠加。通过傅立叶变换后，得到的是图像的频谱。表示图像的能量梯度。 频率域：频率域(frequency domain)任何一个波形都可以分解成多个正弦波之和。每个正弦波都有自己的频率和振幅。所以任意一个波形信号有自己的频率和振幅的集合。频率域就是空域经">
@@ -473,7 +473,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-08-02 00:13:51" itemprop="dateModified" datetime="2020-08-02T00:13:51+08:00">2020-08-02</time>
+                <time title="修改时间：2020-08-02 13:25:24" itemprop="dateModified" datetime="2020-08-02T13:25:24+08:00">2020-08-02</time>
               
             
           </span>
@@ -566,10 +566,10 @@
 <li>时域：时域(时间域)——自变量是时间,即横轴是时间,纵轴是信号的变化。其动态信号x(t)是描述信号在不同时刻取值的函数。</li>
 <li>频域： 频域(频率域)——自变量是频率,即横轴是频率,纵轴是该频率信号的幅度,也就是通常说的频谱图。频谱图描述了信号的频率结构及频率与该频率信号幅度的关系。<h3 id="a-直观理解"><a href="#a-直观理解" class="headerlink" title="a.直观理解"></a>a.直观理解</h3></li>
 </ul>
-<div style="width: 50%; margin:0 auto"> 
+<div style="width: 50%; margin:0 auto">
 
 <p><img src="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu1.jpg?raw=true"></p>
-</div> Figure1是原始 lena，是我们肉眼可以理解的空域信号。Figure2是将Figure1进行二维傅里叶变换后的频谱图，是我们肉眼无法直观理解的频率域信号的可视化结果。越靠近频谱图中心位置信号频率越低，即中心位置的信号是低频信号，对于空域Figure1中的像素变化很"慢"的光滑部分比如脸部皮肤和肩部。远离中心位置的信号是高频信号，对应Figure1中的头发、帽檐等变化"很快"的部分。
+</div>Figure1是原始 lena，是我们肉眼可以理解的空域信号。Figure2是将Figure1进行二维傅里叶变换后的频谱图，是我们肉眼无法直观理解的频率域信号的可视化结果。越靠近频谱图中心位置信号频率越低，即中心位置的信号是低频信号，对于空域Figure1中的像素变化很"慢"的光滑部分比如脸部皮肤和肩部。远离中心位置的信号是高频信号，对应Figure1中的头发、帽檐等变化"很快"的部分。
 
 <p>使用一个频域低通滤波器把Figure2中高频部分都过滤掉得到Figure4的频谱图（除了中心低频被保留，其余高频全部过滤），这个频域操作等价于在Figure1这个空域信号上，用对应的卷积函数进行卷积操作。频率过滤得到Figure4后，再使用傅里叶逆变换回到空域Figure3，我们发现Figure3中高频纹理细节都没有了，剩下的低频光滑的内容。不同频率对应着不同强弱的能量。</p>
 <p>从上面的例子我们发现，空域的信号(图像)，可以分解成频域不同频率的信号(不同频率的波)叠加，我们在频域对某些频率的信号进行处理，会反应到空域上相对应的原始信号上，等价于直接在空域进行卷积操作。</p>
@@ -610,7 +610,9 @@
 <h2 id="1-2第二代GCN："><a href="#1-2第二代GCN：" class="headerlink" title="1.2第二代GCN："></a>1.2第二代GCN：</h2><p><strong><em>Convolutional Neural Networks on Graphs with Fast Localized Spectral Filtering</em></strong>中，把$\hat { h } ( \lambda _ { l })$巧妙地设计成了$\sum _ { j = 0 } ^ { K } \alpha _ { j } \lambda _ { l } ^ { j }$ 。<br>则卷积公式为：<br>$$( g_{ \theta}*x )_ {G} = U \sum _ { j = 0 } ^ { K } \alpha _ { j } \lambda _ { l } ^ { j } U^{T} x$$<br>又因为$L ^ { 2 } = U \Lambda U ^ { T } U \Lambda U ^ { T } = U \Lambda ^ { 2 } U ^ { T } $ 并且$U^T U = E $<br>进而则卷积公式为：<br>$$( g_{ \theta}*x )_ {G} = U \sum _ { j = 0 } ^ { K } \alpha _ { j } L^ { j } U^{T} x$$<br>其中$( \alpha _ { 0 } , \alpha _ { 1 } , \cdots , \alpha _ { K - 1 } )$是权重参数（可学习的）。<br>该卷积核的优点：<br>$\cdot$ 卷积核只有$K$ 个参数，并且一般$K$ 远小于$n$ ，参数的复杂度被大大降低了；<br>$\cdot$ 矩阵变换后不需要对拉普拉斯矩阵$L$ 进行特征分解，直接用$L$ 进行变换。但是要计算$L^ { j }$,计算复杂度还是$O(n^{2})$；<br>$\cdot$ 卷积核具有很好的spatial localiztion，$K$ 就是卷积核的receptive field，也就是说每次卷积会将中心顶点K-hop neighbor 上的feature进行加权求和，权重系数就是$\alpha _ { K }$。<br>下面以图为例：</p>
 <div style="width: 70%; margin: auto"> 
 
-<p><img src="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu6.jpeg?raw=true"><br><img src="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu7.jpeg?raw=true"> </p></div><p></p>
+<p><img src="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu6.jpg?raw=true"><br><img src="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu7.jpg?raw=true"></p>
+</div>
+
 <h2 id="1-3利用Chebyshev多项式作为卷积核："><a href="#1-3利用Chebyshev多项式作为卷积核：" class="headerlink" title="1.3利用Chebyshev多项式作为卷积核："></a>1.3利用Chebyshev多项式作为卷积核：</h2><p>利用Chebyshev多项式代替卷积核，就可以得到下式：<br>$$g _ { \theta } ( \Lambda ) \approx \sum _ { k = 0 } ^ { K - 1 } \beta _ { k } T _ { k } ( \tilde { \Lambda } )$$<br>其中，$T _ { k }$ 是$k$ 阶的Chebyshev多项式，$\beta _ { k }$ 是对应的系数（也就是训练中迭代更新的参数）。$\tilde { \Lambda }= \frac { 2 } { \lambda _ { m a x } }<br>{ \Lambda }-I$。进行这个shift变换的原因是：<br>第一类Chebyshev多项式的解析形式是   $T _ { k } ( x ) = \cos ( k \cdot \arccos ( x ) )$<br>因为 $\arccos (  )$ 函数，所以输入必须在 $[-1,1]$ 之间。<br>则卷积公式为：<br>$$( g_{ \theta}*x )_ {G} =  U \sum _ { k = 0 } ^ { K - 1 } \beta _ { k } T _ { k } ( \tilde { \Lambda } ) U ^ { T } x $$<br>因为Chebyshev多项式作用在对角矩阵上，不会影响矩阵运算。那就改变一下运算顺序，先把矩阵运算放进去:<br>$$( g_{ \theta}*x )_ {G} =   \sum _ { k = 0 } ^ { K - 1 } \beta _ { k } T _ { k } (U \tilde { \Lambda }U ^ { T } )  x $$<br>因为拉普拉斯矩阵$L  = U \Lambda U ^ { T } $ ，代入可以得:<br>$$( g_{ \theta}*x )_ {G} =   \sum _ { k = 0 } ^ { K - 1 } \beta _ { k } T _ { k } (\tilde {L})  x $$<br>其中，$\tilde { L }= \frac { 2 } { \lambda _ { m a x } } { L }-I$ 。这样变换的好处在于：计算过程无需再进行特征向量分解。<br>在实际运算过程中，可以利用Chebyshev多项式的性质，进行递推：<br>$$T _ { k } ( \tilde { L } ) = 2 \tilde { L } T _ { k - 1 } ( \tilde { L } ) - T _ { k - 2 } ( \tilde { L } )$$<br>$$T _ { 0 } ( \tilde { L } ) = I , T _ { 1 } ( \tilde { L } ) = \tilde { L }<br>$$<br>现在以拉普拉斯矩阵$L$为例，分析一下其普性质：<br>归一化的拉普拉斯矩阵为<br>$$L = I - D ^ { - 1 / 2 } A D ^ { - 1 / 2 }$$<br>根据其性质可以推断出：$\lambda _ { m a x } \approx 2$,则$\tilde { L } \approx { L }-I$</p>
 <p>若令$K=1$为一阶Chebyshev滤波器，则卷积公式为：<br>$$( g_{ \theta}*x )_ {G} = (\beta _ { 0 } I + \beta _ { 1 }( L-I))x $$<br>若令$K=2$为二阶Chebyshev滤波器，则卷积公式为：<br>$$( g_{ \theta}*x )_ {G} = (\beta _ { 0 } I + \beta _ { 1 }( L-I)++ \beta _ { 2 }( L-I)^2)x $$<br>整理可得：<br>$$( g_{ \theta}*x )_ {G} = ((\beta _ { 0 } -\beta _ { 1 }+\beta _ { 2 })I +( \beta _ { 1 }- 2\beta _ { 2})L++ \beta _ { 2 }(L^2))x $$<br>$$A = \left(\begin{matrix}0&amp;1&amp;1&amp;0&amp;0\\1&amp;0&amp;0&amp;1&amp;1\\1&amp;0&amp;0&amp;0&amp;1\\0&amp;1&amp;0&amp;0&amp;0\\0&amp;1&amp;1&amp;0&amp;0\end{matrix}\right)<br>$$</p>
 
