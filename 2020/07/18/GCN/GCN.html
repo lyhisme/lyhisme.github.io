@@ -164,7 +164,7 @@
 <meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu8.png?raw=true">
 <meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu10.jpg?raw=true">
 <meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu9.jpg?raw=true">
-<meta property="og:updated_time" content="2020-08-03T07:50:28.757Z">
+<meta property="og:updated_time" content="2020-08-03T09:02:07.638Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Graph Convolutional Networks">
 <meta name="twitter:description" content="一、概念介绍：卷积1.1卷积 空间域：空间域(spatial domain)也叫空域，即所说的像素域，在空域的处理就是在像素级的处理，如在像素级的图像叠加。通过傅立叶变换后，得到的是图像的频谱。表示图像的能量梯度。 频率域：频率域(frequency domain)任何一个波形都可以分解成多个正弦波之和。每个正弦波都有自己的频率和振幅。所以任意一个波形信号有自己的频率和振幅的集合。频率域就是空域经">
@@ -476,7 +476,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-08-03 15:50:28" itemprop="dateModified" datetime="2020-08-03T15:50:28+08:00">2020-08-03</time>
+                <time title="修改时间：2020-08-03 17:02:07" itemprop="dateModified" datetime="2020-08-03T17:02:07+08:00">2020-08-03</time>
               
             
           </span>
@@ -636,7 +636,12 @@
 <p><img src="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu9.jpg?raw=true"></p>
 </div>
 
-<p>给定一个图，$G=(V,E,W)$，$ V$ 是顶点集并且$n = | V |$；$E$ 是边集；$W \in R ^ { n \times n }$是权重矩阵。<br>输入的结点feature map矩阵：<br>$$ X = { x _ { 1 } ^ { T } , x _ { 2 } ^ { T } , \cdots , x _ { n } ^ { T } } ^ { T } \in R ^ { n \times d } $$<br>###初始特征：<br>$$ H^{(0)} = X$$<br>$H^i$ 是图上对应每个顶点的feature map。<br>###特征传播:<br>初始的邻接矩阵$\tilde { A }$（self-loops）：<br>$$\tilde { A } = A+I$$<br>$\tilde { D } $是  $\tilde { A }$ 中每个顶点的度矩阵,归一化的拉普拉斯矩阵：<br>$$ S = \tilde { D } ^ { - 1 / 2 } \tilde { A } \tilde { D } ^ { - 1 / 2 }$$<br>推广到第$K$ 层的特征传播：<br>$$ H^{(k)} = SH^{(k-1)}$$<br>###特征变换:<br>$$ H^{(k)} = H^{(k-1)} \theta^{(k)}$$<br>\theta^{(k)为权值矩阵。<br>###非线性激活：<br>$$ H^{(k)} = Relu(H^{(k-1)} \theta^{(k)})$$<br>###分类器：<br>$$ Y_{GCN} = softmax(SH^{(k-1)} \theta^{(k)})$$<br>总结一下优缺点：<br>优点：<br>这样的共享方式， $\theta^{(k)}$ 的维度是可以进行调节的，与顶点的数目无关，使得模型可以用于大规模的graph数据集。另一方面这个模型可以完成图结构train在test上不一样的任务。<br>缺点：<br>这个模型对于同阶的邻域上分配给不同的邻居的权重是完全相同的（也就是GAT论文里说的无法 enable specifying different weights to different nodes in a neighborhood）。这一点限制了模型对于空间信息的相关性的捕捉能力，这也是在很多任务上不如GAT的根本原因。</p>
+<p>给定一个图，$G=(V,E,W)$，$ V$ 是顶点集并且$n = | V |$；$E$ 是边集；$W \in R ^ { n \times n }$是权重矩阵。<br>输入的结点feature map矩阵：<br>$$ X = { x _ { 1 } ^ { T } , x _ { 2 } ^ { T } , \cdots , x _ { n } ^ { T } } ^ { T } \in R ^ { n \times d } $$</p>
+<h3 id="初始特征："><a href="#初始特征：" class="headerlink" title="初始特征："></a>初始特征：</h3><p>$$ H^{(0)} = X$$<br>$H^i$ 是图上对应每个顶点的feature map。</p>
+<h3 id="特征传播"><a href="#特征传播" class="headerlink" title="特征传播:"></a>特征传播:</h3><p>初始的邻接矩阵$\tilde { A }$（self-loops）：<br>$$\tilde { A } = A+I$$<br>$\tilde { D } $是  $\tilde { A }$ 中每个顶点的度矩阵,归一化的拉普拉斯矩阵：<br>$$ S = \tilde { D } ^ { - 1 / 2 } \tilde { A } \tilde { D } ^ { - 1 / 2 }$$<br>推广到第$K$ 层的特征传播：<br>$$ H^{(k)} = SH^{(k-1)}$$</p>
+<h3 id="特征变换"><a href="#特征变换" class="headerlink" title="特征变换:"></a>特征变换:</h3><p>$$ H^{(k)} = H^{(k-1)} \theta^{(k)}$$<br>$ \theta^{(k)}$ 为权值矩阵。</p>
+<h3 id="非线性激活："><a href="#非线性激活：" class="headerlink" title="非线性激活："></a>非线性激活：</h3><p>$$ H^{(k)} = Relu(H^{(k-1)} \theta^{(k)})$$</p>
+<h3 id="分类器："><a href="#分类器：" class="headerlink" title="分类器："></a>分类器：</h3><p>$$ Y_{GCN} = softmax(SH^{(k-1)} \theta^{(k)})$$<br>总结一下优缺点：<br>优点：<br>这样的共享方式， $\theta^{(k)}$ 的维度是可以进行调节的，与顶点的数目无关，使得模型可以用于大规模的graph数据集。另一方面这个模型可以完成图结构train在test上不一样的任务。<br>缺点：<br>这个模型对于同阶的邻域上分配给不同的邻居的权重是完全相同的（也就是GAT论文里说的无法 enable specifying different weights to different nodes in a neighborhood）。这一点限制了模型对于空间信息的相关性的捕捉能力，这也是在很多任务上不如GAT的根本原因。</p>
 
       
     </div>
@@ -704,6 +709,22 @@
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/08/03/GCN/GCN.html" rel="prev" title>
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -833,7 +854,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、概念介绍：卷积"><span class="nav-text">一、概念介绍：卷积</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1卷积"><span class="nav-text">1.1卷积</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-直观理解"><span class="nav-text">a.直观理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-信号"><span class="nav-text">b.信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c-数学推导"><span class="nav-text">c.数学推导</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-图的拉普拉斯矩阵"><span class="nav-text">二.图的拉普拉斯矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1定义：-拉普拉斯矩阵L"><span class="nav-text">1.1定义： 拉普拉斯矩阵L</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2Laplacian矩阵的谱分解-特征分解"><span class="nav-text">1.2Laplacian矩阵的谱分解(特征分解)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-求特征值和特征向量"><span class="nav-text">a.求特征值和特征向量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-求特征分解"><span class="nav-text">b.求特征分解</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-图上的傅里叶变换与卷积"><span class="nav-text">三.图上的傅里叶变换与卷积</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1Graph上的傅里叶变换"><span class="nav-text">1.1Graph上的傅里叶变换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-传统傅里叶变换："><span class="nav-text">a.传统傅里叶变换：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-Graph上的傅里叶变换"><span class="nav-text">b.Graph上的傅里叶变换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2Graph上的卷积"><span class="nav-text">1.2Graph上的卷积</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-传统卷积定理"><span class="nav-text">a.传统卷积定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-Graph上卷积"><span class="nav-text">b.Graph上卷积</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-深度学习中的GCN"><span class="nav-text">四.深度学习中的GCN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1第一代GCN："><span class="nav-text">1.1第一代GCN：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2第二代GCN："><span class="nav-text">1.2第二代GCN：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3利用Chebyshev多项式作为卷积核："><span class="nav-text">1.3利用Chebyshev多项式作为卷积核：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4GCN的进阶版："><span class="nav-text">1.4GCN的进阶版：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4目前的GCN的框架："><span class="nav-text">1.4目前的GCN的框架：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、概念介绍：卷积"><span class="nav-text">一、概念介绍：卷积</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1卷积"><span class="nav-text">1.1卷积</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-直观理解"><span class="nav-text">a.直观理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-信号"><span class="nav-text">b.信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c-数学推导"><span class="nav-text">c.数学推导</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-图的拉普拉斯矩阵"><span class="nav-text">二.图的拉普拉斯矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1定义：-拉普拉斯矩阵L"><span class="nav-text">1.1定义： 拉普拉斯矩阵L</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2Laplacian矩阵的谱分解-特征分解"><span class="nav-text">1.2Laplacian矩阵的谱分解(特征分解)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-求特征值和特征向量"><span class="nav-text">a.求特征值和特征向量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-求特征分解"><span class="nav-text">b.求特征分解</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-图上的傅里叶变换与卷积"><span class="nav-text">三.图上的傅里叶变换与卷积</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1Graph上的傅里叶变换"><span class="nav-text">1.1Graph上的傅里叶变换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-传统傅里叶变换："><span class="nav-text">a.传统傅里叶变换：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-Graph上的傅里叶变换"><span class="nav-text">b.Graph上的傅里叶变换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2Graph上的卷积"><span class="nav-text">1.2Graph上的卷积</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-传统卷积定理"><span class="nav-text">a.传统卷积定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-Graph上卷积"><span class="nav-text">b.Graph上卷积</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-深度学习中的GCN"><span class="nav-text">四.深度学习中的GCN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1第一代GCN："><span class="nav-text">1.1第一代GCN：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2第二代GCN："><span class="nav-text">1.2第二代GCN：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3利用Chebyshev多项式作为卷积核："><span class="nav-text">1.3利用Chebyshev多项式作为卷积核：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4GCN的进阶版："><span class="nav-text">1.4GCN的进阶版：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4目前的GCN的框架："><span class="nav-text">1.4目前的GCN的框架：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始特征："><span class="nav-text">初始特征：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征传播"><span class="nav-text">特征传播:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征变换"><span class="nav-text">特征变换:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非线性激活："><span class="nav-text">非线性激活：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类器："><span class="nav-text">分类器：</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -873,7 +894,7 @@
       <i class="fa fa-area-chart"> 站点字数合计:</i>
     </span>
     
-    <span title="站点总字数">11k</span>
+    <span title="站点总字数">68k</span>
   
   
 </div>
