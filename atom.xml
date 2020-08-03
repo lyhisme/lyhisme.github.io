@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://lyhisme.github.io/"/>
-  <updated>2020-08-03T14:41:37.662Z</updated>
-  <id>https://lyhisme.github.io/</id>
+  <link href="http://lyhisme.com/"/>
+  <updated>2020-08-03T14:57:50.119Z</updated>
+  <id>http://lyhisme.com/</id>
   
   <author>
     <name>YunhengLi</name>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Graph Convolutional Networks</title>
-    <link href="https://lyhisme.github.io/2020/07/18/GCN/GCN.html"/>
-    <id>https://lyhisme.github.io/2020/07/18/GCN/GCN.html</id>
+    <link href="http://lyhisme.com/2020/07/18/GCN/GCN.html"/>
+    <id>http://lyhisme.com/2020/07/18/GCN/GCN.html</id>
     <published>2020-07-18T05:30:00.000Z</published>
-    <updated>2020-08-03T14:41:37.662Z</updated>
+    <updated>2020-08-03T14:57:50.119Z</updated>
     
     <summary type="html">
     
@@ -35,12 +35,12 @@
     
     </summary>
     
-      <category term="GNN" scheme="https://lyhisme.github.io/categories/GNN/"/>
+      <category term="GNN" scheme="http://lyhisme.com/categories/GNN/"/>
     
     
-      <category term="GCN" scheme="https://lyhisme.github.io/tags/GCN/"/>
+      <category term="GCN" scheme="http://lyhisme.com/tags/GCN/"/>
     
-      <category term="python" scheme="https://lyhisme.github.io/tags/python/"/>
+      <category term="python" scheme="http://lyhisme.com/tags/python/"/>
     
   </entry>
   

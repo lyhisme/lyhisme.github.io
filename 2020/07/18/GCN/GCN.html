@@ -150,7 +150,7 @@
 <meta name="keywords" content="GCN,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Graph Convolutional Networks">
-<meta property="og:url" content="https://lyhisme.github.io/2020/07/18/GCN/GCN.html">
+<meta property="og:url" content="http://lyhisme.com/2020/07/18/GCN/GCN.html">
 <meta property="og:site_name" content="LYH&#39;Blog">
 <meta property="og:description" content="一、概念介绍：卷积1.1卷积 空间域：空间域(spatial domain)也叫空域，即所说的像素域，在空域的处理就是在像素级的处理，如在像素级的图像叠加。通过傅立叶变换后，得到的是图像的频谱。表示图像的能量梯度。 频率域：频率域(frequency domain)任何一个波形都可以分解成多个正弦波之和。每个正弦波都有自己的频率和振幅。所以任意一个波形信号有自己的频率和振幅的集合。频率域就是空域经">
 <meta property="og:locale" content="zh-CN">
@@ -164,7 +164,7 @@
 <meta property="og:image" content="https://gitee.com/lyhisme/blog/raw/master/images/GCN/tu8.png?raw=true">
 <meta property="og:image" content="https://gitee.com/lyhisme/blog/raw/master/images/GCN/tu10.jpg?raw=true">
 <meta property="og:image" content="https://gitee.com/lyhisme/blog/raw/master/images/GCN/tu9.jpg?raw=true">
-<meta property="og:updated_time" content="2020-08-03T14:41:37.662Z">
+<meta property="og:updated_time" content="2020-08-03T14:57:50.119Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Graph Convolutional Networks">
 <meta name="twitter:description" content="一、概念介绍：卷积1.1卷积 空间域：空间域(spatial domain)也叫空域，即所说的像素域，在空域的处理就是在像素级的处理，如在像素级的图像叠加。通过傅立叶变换后，得到的是图像的频谱。表示图像的能量梯度。 频率域：频率域(frequency domain)任何一个波形都可以分解成多个正弦波之和。每个正弦波都有自己的频率和振幅。所以任意一个波形信号有自己的频率和振幅的集合。频率域就是空域经">
@@ -178,7 +178,7 @@
 
   
   
-  <link rel="canonical" href="https://lyhisme.github.io/2020/07/18/GCN/GCN">
+  <link rel="canonical" href="http://lyhisme.com/2020/07/18/GCN/GCN">
 
 
 
@@ -416,7 +416,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lyhisme.github.io/2020/07/18/GCN/GCN.html">
+    <link itemprop="mainEntityOfPage" href="http://lyhisme.com/2020/07/18/GCN/GCN.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YunhengLi">
@@ -476,7 +476,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-08-03 22:41:37" itemprop="dateModified" datetime="2020-08-03T22:41:37+08:00">2020-08-03</time>
+                <time title="修改时间：2020-08-03 22:57:50" itemprop="dateModified" datetime="2020-08-03T22:57:50+08:00">2020-08-03</time>
               
             
           </span>
@@ -593,13 +593,13 @@
 
 <p><img src="https://gitee.com/lyhisme/blog/raw/master/images/GCN/tu5.jpeg?raw=true"> </p></div> <p></p>
 <h2 id="1-2Laplacian矩阵的谱分解-特征分解"><a href="#1-2Laplacian矩阵的谱分解-特征分解" class="headerlink" title="1.2Laplacian矩阵的谱分解(特征分解)"></a>1.2Laplacian矩阵的谱分解(特征分解)</h2><h3 id="a-求特征值和特征向量"><a href="#a-求特征值和特征向量" class="headerlink" title="a.求特征值和特征向量"></a>a.求特征值和特征向量</h3><p>$\lambda$为特征值，$u$为特征向量，则满足下式：<br>$$L u = \lambda u$$</p>
-<h3 id="b-求特征分解"><a href="#b-求特征分解" class="headerlink" title="b.求特征分解"></a>b.求特征分解</h3><p>令$L$是一个 N×N 的方阵，且有 N 个线性无关的特征向量 。这样，$L$可以被分解为：<br>$$L = U \Lambda U ^ { - 1 } = U \begin{pmatrix}{ \lambda _ { 1 } } &amp; &amp; \\ &amp;{…}&amp; \\ &amp; &amp; { \lambda _ { 3 } } \end{pmatrix} U ^ { - 1 }$$<br>其中，$U$是N×N方阵，且其第$i$列为$L$的特征向量$ui$，ui为列向量；$U = ( \vec { u _ { 1 } } , \vec { u _ { 2 } } , \ldots , \vec { u _ { n } } )$，$Λ$是对角矩阵，其对角线上的元素为对应的特征值。<br>Laplacian矩阵是对称半正定的，具有良好的性质：</p>
+<h3 id="b-求特征分解"><a href="#b-求特征分解" class="headerlink" title="b.求特征分解"></a>b.求特征分解</h3><p>令$L$是一个 N×N 的方阵，且有 N 个线性无关的特征向量 。这样，$L$可以被分解为：<br>$$L = U \Lambda U ^ { - 1 } = U \begin{pmatrix}{ \lambda _ { 1 } } &amp; &amp; \\ &amp;{\ddots}&amp; \\ &amp; &amp; { \lambda _ { N } } \end{pmatrix} U ^ { - 1 }$$<br>其中，$U$是N×N方阵，且其第$i$列为$L$的特征向量$ui$，ui为列向量；$U = ( \vec { u _ { 1 } } , \vec { u _ { 2 } } , \ldots , \vec { u _ { n } } )$，$Λ$是对角矩阵，其对角线上的元素为对应的特征值。<br>Laplacian矩阵是对称半正定的，具有良好的性质：</p>
 <ul>
 <li>有n个线性无关的特征向量；</li>
 <li>特征值非负；</li>
 <li>特征向量相互正交，即U为正交矩阵。</li>
 </ul>
-<p>那么拉普拉斯矩阵的谱分解形式为：<br>$$L = U \begin{pmatrix}{ \lambda _ { 1 } } &amp; &amp; \\ &amp;{…}&amp; \\ &amp; &amp; { \lambda _ { 3 } } \end{pmatrix} U ^ { - 1 }$$<br>其中$U = ( \vec { u _ { 1 } } , \vec { u _ { 2 } } , \ldots , \vec { u _ { n } } )$，是列向量为单位特征向量的矩阵，也就是说$\vec { u _ { i } }$为是列向量；$\begin{pmatrix}{ \lambda _ { 1 } } &amp; &amp; \\ &amp;{…}&amp; \\ &amp; &amp; { \lambda _ { 3 } } \end{pmatrix}$是n个特征值构成的对角阵；由于$U$是正交矩阵，即$U U ^ { T } = E$；<br>所以特征分解又可以写成：<br>$$L = U \begin{pmatrix}{ \lambda _ { 1 } } &amp; &amp; \\ &amp;{…}&amp; \\ &amp; &amp; { \lambda _ { 3 } } \end{pmatrix} U ^ { T }$$</p>
+<p>那么拉普拉斯矩阵的谱分解形式为：<br>$$L = U \begin{pmatrix}{ \lambda _ { 1 } } &amp; &amp; \\ &amp;{\ddots}&amp; \\ &amp; &amp; { \lambda _ { N } } \end{pmatrix} U ^ { - 1 }$$<br>其中$U = ( \vec { u _ { 1 } } , \vec { u _ { 2 } } , \ldots , \vec { u _ { n } } )$，是列向量为单位特征向量的矩阵，也就是说$\vec { u _ { i } }$为是列向量；$\begin{pmatrix}{ \lambda _ { 1 } } &amp; &amp; \\ &amp;{\ddots}&amp; \\ &amp; &amp; { \lambda _ { N } } \end{pmatrix}$是n个特征值构成的对角阵；由于$U$是正交矩阵，即$U U ^ { T } = E$；<br>所以特征分解又可以写成：<br>$$L = U \begin{pmatrix}{ \lambda _ { 1 } } &amp; &amp; \\ &amp;{\ddots}&amp; \\ &amp; &amp; { \lambda _ { N } } \end{pmatrix} U ^ { T }$$</p>
 <h1 id="三-图上的傅里叶变换与卷积"><a href="#三-图上的傅里叶变换与卷积" class="headerlink" title="三.图上的傅里叶变换与卷积"></a>三.图上的傅里叶变换与卷积</h1><p>把拉普拉斯算子的【特征函数】变为Graph对应的拉普拉斯矩阵的【特征向量】</p>
 <h2 id="1-1Graph上的傅里叶变换"><a href="#1-1Graph上的傅里叶变换" class="headerlink" title="1.1Graph上的傅里叶变换"></a>1.1Graph上的傅里叶变换</h2><h3 id="a-传统傅里叶变换："><a href="#a-传统傅里叶变换：" class="headerlink" title="a.传统傅里叶变换："></a>a.传统傅里叶变换：</h3><p>$$F ( \omega ) = F [ f ( t ) ] = \int f ( t ) e ^ { - i \omega t } d t$$<br>其中$e ^ { - i \omega t }$是傅里叶变换的基函数，它是拉普拉斯算子$\Delta$的特征函数，其中$\omega$与特征值有关。<br>拉普拉斯算子$\Delta$与$e ^ { - i \omega t }$满足特征方程：<br>$$\Delta e ^ { - i \omega t } = \frac { \partial ^ { 2 } } { \partial t ^ { 2 } } e ^ { - i \omega t } = - \omega ^ { 2 } e ^ { - i \omega t }$$</p>
 <h3 id="b-Graph上的傅里叶变换"><a href="#b-Graph上的傅里叶变换" class="headerlink" title="b.Graph上的傅里叶变换"></a>b.Graph上的傅里叶变换</h3><p>拉普拉斯矩阵=离散拉普拉斯算子<br>拉普拉斯矩阵的【特征向量$U$】=拉普拉斯算子的【特征函数$e ^ { - i \omega t }$】<br>仿照上面传统傅里叶定义，得到Graph上的傅里叶变换：<br>$$F ( \lambda _ { l } ) = \hat { f } ( \lambda _ { l } ) = \sum _ { i = 1 } ^ { N } f ( i ) u _ { l } ^ { * } ( i )$$<br>$\lambda _ { l }$为第$l$个特征值；$u _ { l }$为第$l$个特征向量；$f$为待变换函数，$ \hat { f }$为其对应的傅里叶变换，$f$和$ \hat { f }$与顶点$i$一一对应。<br>利用矩阵乘法将图上的傅里叶变换推广到矩阵形式：<br>$$\begin{pmatrix}{\hat { f } ( \lambda _ { 1 } )} \\ {\hat { f } ( \lambda _ { 2 } )} \\ {\vdots} \\ {\hat { f } ( \lambda _ { N } )} \end{pmatrix} = \begin{pmatrix}{u _ { 1 }(1)} &amp; {u _ { 1 }(2)} &amp; {\dots} &amp; {u _ { 1 }(N)} \\ {u _ { 2 }(1) }&amp; {u _ { 2 }(2)} &amp; {\dots}&amp;{u _ { 2 }(N)} \\ {\vdots} &amp; {\vdots } &amp; {\ddots} &amp; {\vdots} \\ {u _ { N }(1)} &amp; {u _ { N }(2)} &amp; {\dots} &amp; {u _ { N }(N)} \end{pmatrix} \begin{pmatrix}{f(1)} \\ {f(2)} \\ {\vdots} \\ {f(N)} \end{pmatrix}$$<br>即$f$ 在图上的傅里叶变换矩阵形式为：<br>$$ \hat { f }  = U^{T} f $$</p>
@@ -675,7 +675,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://lyhisme.github.io/2020/07/18/GCN/GCN.html" title="Graph Convolutional Networks">https://lyhisme.github.io/2020/07/18/GCN/GCN.html</a>
+    <a href="http://lyhisme.com/2020/07/18/GCN/GCN.html" title="Graph Convolutional Networks">http://lyhisme.com/2020/07/18/GCN/GCN.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
