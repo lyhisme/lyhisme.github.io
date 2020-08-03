@@ -154,7 +154,7 @@
 <meta property="og:site_name" content="LYH&#39;Blog">
 <meta property="og:description" content="一、概念介绍：卷积1.1卷积 空间域：空间域(spatial domain)也叫空域，即所说的像素域，在空域的处理就是在像素级的处理，如在像素级的图像叠加。通过傅立叶变换后，得到的是图像的频谱。表示图像的能量梯度。 频率域：频率域(frequency domain)任何一个波形都可以分解成多个正弦波之和。每个正弦波都有自己的频率和振幅。所以任意一个波形信号有自己的频率和振幅的集合。频率域就是空域经">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu1.jpg?raw=true">
+<meta property="og:image" content="https://gitee.com/lyhisme/blog/raw/master/images/GCN/tu1.jpg">
 <meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu2.gif?raw=true">
 <meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu3.gif?raw=true">
 <meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu4.gif?raw=true">
@@ -164,11 +164,11 @@
 <meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu8.png?raw=true">
 <meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu10.jpg?raw=true">
 <meta property="og:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu9.jpg?raw=true">
-<meta property="og:updated_time" content="2020-08-03T09:05:26.104Z">
+<meta property="og:updated_time" content="2020-08-03T14:35:15.104Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Graph Convolutional Networks">
 <meta name="twitter:description" content="一、概念介绍：卷积1.1卷积 空间域：空间域(spatial domain)也叫空域，即所说的像素域，在空域的处理就是在像素级的处理，如在像素级的图像叠加。通过傅立叶变换后，得到的是图像的频谱。表示图像的能量梯度。 频率域：频率域(frequency domain)任何一个波形都可以分解成多个正弦波之和。每个正弦波都有自己的频率和振幅。所以任意一个波形信号有自己的频率和振幅的集合。频率域就是空域经">
-<meta name="twitter:image" content="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu1.jpg?raw=true">
+<meta name="twitter:image" content="https://gitee.com/lyhisme/blog/raw/master/images/GCN/tu1.jpg">
 
 
 
@@ -476,7 +476,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-08-03 17:05:26" itemprop="dateModified" datetime="2020-08-03T17:05:26+08:00">2020-08-03</time>
+                <time title="修改时间：2020-08-03 22:35:15" itemprop="dateModified" datetime="2020-08-03T22:35:15+08:00">2020-08-03</time>
               
             
           </span>
@@ -571,8 +571,9 @@
 </ul>
 <div style="width: 50%; margin:0 auto">
 
-<p><img src="https://github.com/lyhisme/lyhisme.github.io/blob/master/picture/GCN/tu1.jpg?raw=true"></p>
-</div>Figure1是原始 lena，是我们肉眼可以理解的空域信号。Figure2是将Figure1进行二维傅里叶变换后的频谱图，是我们肉眼无法直观理解的频率域信号的可视化结果。越靠近频谱图中心位置信号频率越低，即中心位置的信号是低频信号，对于空域Figure1中的像素变化很"慢"的光滑部分比如脸部皮肤和肩部。远离中心位置的信号是高频信号，对应Figure1中的头发、帽檐等变化"很快"的部分。
+<p><img src="https://gitee.com/lyhisme/blog/raw/master/images/GCN/tu1.jpg"></p>
+</div>
+Figure1是原始 lena，是我们肉眼可以理解的空域信号。Figure2是将Figure1进行二维傅里叶变换后的频谱图，是我们肉眼无法直观理解的频率域信号的可视化结果。越靠近频谱图中心位置信号频率越低，即中心位置的信号是低频信号，对于空域Figure1中的像素变化很"慢"的光滑部分比如脸部皮肤和肩部。远离中心位置的信号是高频信号，对应Figure1中的头发、帽檐等变化"很快"的部分。
 
 <p>使用一个频域低通滤波器把Figure2中高频部分都过滤掉得到Figure4的频谱图（除了中心低频被保留，其余高频全部过滤），这个频域操作等价于在Figure1这个空域信号上，用对应的卷积函数进行卷积操作。频率过滤得到Figure4后，再使用傅里叶逆变换回到空域Figure3，我们发现Figure3中高频纹理细节都没有了，剩下的低频光滑的内容。不同频率对应着不同强弱的能量。</p>
 <p>从上面的例子我们发现，空域的信号(图像)，可以分解成频域不同频率的信号(不同频率的波)叠加，我们在频域对某些频率的信号进行处理，会反应到空域上相对应的原始信号上，等价于直接在空域进行卷积操作。</p>
