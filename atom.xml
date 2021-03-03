@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lyhisme.com/"/>
-  <updated>2020-08-07T07:40:36.298Z</updated>
+  <updated>2021-03-03T15:26:31.364Z</updated>
   <id>http://lyhisme.com/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Decoupling GCN with DropGraph Module for Skeleton-Based Action Recognition</title>
+    <link href="http://lyhisme.com/2021/03/03/GCN/Decoupling%20GCN.html"/>
+    <id>http://lyhisme.com/2021/03/03/GCN/Decoupling GCN.html</id>
+    <published>2021-03-03T05:30:00.000Z</published>
+    <updated>2021-03-03T15:26:31.364Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="GNN" scheme="http://lyhisme.com/categories/GNN/"/>
+    
+    
+      <category term="GCN" scheme="http://lyhisme.com/tags/GCN/"/>
+    
+      <category term="Skeleton-based action recognition" scheme="http://lyhisme.com/tags/Skeleton-based-action-recognition/"/>
+    
+      <category term="python" scheme="http://lyhisme.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Graph Convolutional Networks</title>
     <link href="http://lyhisme.com/2020/07/18/GCN/GCN.html"/>
     <id>http://lyhisme.com/2020/07/18/GCN/GCN.html</id>
     <published>2020-07-18T05:30:00.000Z</published>
-    <updated>2020-08-07T07:40:36.298Z</updated>
+    <updated>2020-08-07T07:40:38.000Z</updated>
     
     <summary type="html">
     
