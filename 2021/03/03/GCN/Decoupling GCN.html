@@ -168,7 +168,7 @@
 <meta property="og:image" content="https://gitee.com/lyhisme/mapdepot/raw/master/20210303215257.png">
 <meta property="og:image" content="https://gitee.com/lyhisme/mapdepot/raw/master/20210303214954.png">
 <meta property="og:image" content="https://gitee.com/lyhisme/mapdepot/raw/master/20210303215015.png">
-<meta property="og:updated_time" content="2021-03-03T15:26:31.364Z">
+<meta property="og:updated_time" content="2021-03-03T15:38:32.327Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Decoupling GCN with DropGraph Module for Skeleton-Based Action Recognition">
 <meta name="twitter:description" content="Paper：https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123690528.pdf Github：https://github.com/kchengiva/DecoupleGCN-DropGraph  Main contributions$\bullet$作者发现现有的GCN-based Skeleton-based acti">
@@ -463,7 +463,7 @@
                 
               
 
-              <time title="创建时间：2021-03-03 13:30:00 / 修改时间：23:26:31" itemprop="dateCreated datePublished" datetime="2021-03-03T13:30:00+08:00">2021-03-03</time>
+              <time title="创建时间：2021-03-03 13:30:00 / 修改时间：23:38:32" itemprop="dateCreated datePublished" datetime="2021-03-03T13:30:00+08:00">2021-03-03</time>
             
 
             
@@ -564,36 +564,36 @@
 <h2 id="Approach"><a href="#Approach" class="headerlink" title="Approach"></a>Approach</h2><h3 id="Decoupling-Graph-Convolutional-Network-DC-GCN"><a href="#Decoupling-Graph-Convolutional-Network-DC-GCN" class="headerlink" title="Decoupling Graph Convolutional Network (DC-GCN)"></a>Decoupling Graph Convolutional Network (DC-GCN)</h3><p>首先考虑单分区集的图卷积情况，实际上做了两个矩阵的乘法，$AX$和$XW$，其中，$AX$根据图的邻接矩阵计算不同骨架间的关系，作者称为<strong>spatial aggregation</strong>，而$XW$计算不同通道间的相关信息，作者称为<strong>channel correlation</strong>。在Fig.(a)中，<strong>spatial aggregation</strong>（$AX$）能被分解为分别计算每一个信道上的聚合。特征$X$的所有通道共享同一个邻接矩阵$A$（以相同颜色绘制）。所有目前的识别方法（ST-GCN，Nolocal adaptive GCN，AS-GCN，Directed-GCN）都采用这种方式，这种方式称为耦合图卷积（类似于退化深度卷积，它的卷积核在信道间被共享，退化深度卷积的表达能力明显弱于标准深度卷积）。</p>
 <div style="width: 70%; margin: auto"> 
 
-<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210225204135.png" alt="image-20210225194437210"></p>
+<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210225204135.png"></p>
 </div>
 
 <p>但是，CNN却不使用这种方式，而是使用解耦合卷积网络，这是CNN成功的关键，如图Fig.(b)所示，不同的信道有独立的空间聚合核。</p>
 <div style="width: 70%; margin: auto"> 
 
-<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210225204248.png" alt="image-20210225200342014"></p>
+<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210225204248.png"></p>
 </div>
 
 <p>于是，作者提出了解耦图卷积(DC-GCN)，不同的信道可以有独立且可训练的邻接矩阵，如图Fig.(c)所示。</p>
 <div style="width: 70%; margin: auto">
 
-<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210225210457.png" alt="image-20210225210457462"></p>
+<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210225210457.png"></p>
 </div>
 
-<p>但是与CNN的解耦合神经网络类似，网络中可能有冗余的卷积核，解耦合图卷积网络中可能会有冗余的邻接矩阵。因此作者把信道分离成$g$组（超参数）。在一组的信道共享一个可训练的邻接矩阵。当$g=C$时，每一个信道都有他自己能生成大量冗余参数的spatial aggregation kernel；当$g=1$时，DC-GCN退化成聚合图卷积(coupling graph convolution)。实验表明，超参数$g$的范围在8<del>16效果会比较好。在这种情况下，网络仅增加了5%</del>10%的参数。DC-GCN的公式如下：</p>
+<p>但是与CNN的解耦合神经网络类似，网络中可能有冗余的卷积核，解耦合图卷积网络中可能会有冗余的邻接矩阵。因此作者把信道分离成$g$组（超参数）。在一组的信道共享一个可训练的邻接矩阵。当$g=C$时，每一个信道都有他自己能生成大量冗余参数的spatial aggregation kernel；当$g=1$时，DC-GCN退化成聚合图卷积(coupling graph convolution)。实验表明，超参数$g$的范围在8~16效果会比较好。在这种情况下，网络仅增加了5%~10%的参数。DC-GCN的公式如下：</p>
 <div style="width: 70%; margin: auto">
 
-<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210225211356.png" alt="image-20210225211356439"></p>
+<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210225211356.png"></p>
 </div>
 
 <p><strong>Lightspot：尽管参数量略增加，但是DC-GCN的浮点运算（FLOP）与常规GCN（$n^2C + nC^2$）完全相同，其无需花费额外的时间和GPU内存。</strong></p>
 <div style="width: 70%; margin: auto">
 
-<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210303150054.png" alt="image-20210303150053955"></p>
+<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210303150054.png"></p>
 </div>
 
 <div style="width: 70%; margin: auto">
 
-<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210303214542.png" alt="image-20210303214542824"></p>
+<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210303214542.png"></p>
 </div>
 
 
@@ -605,7 +605,7 @@
 <p>首先用概率为$\gamma$的伯努利分布对图中节点进行采样，然后删除根节点$V_{root}$以及和其最大距离为$K$的姐=节点。</p>
 <div style="width: 70%; margin: auto">
 
-<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210303161507.png" alt="image-20210303161507424"></p>
+<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210303161507.png"></p>
 </div>
 
 <p>作者用 $keep_prob$ 表示节点会被保留的概率，对于传统的dropout来说$keep_prob=1-\gamma$ ,但对于DropGraph来说，不仅有$V_{root}$被删除，相邻节点也有可能会被删除，所以 $keep_prob$应该与 $\gamma$和 $K$ 都有关。将每个节点的平均度定义为 $d_{ave}=2e/n$ ,随机抽样节点的第$i$阶邻域节点的期望个数可以估计为：$B_i=d_{ave} \times (d_{ave}-1)^{i-1}$</p>
@@ -614,7 +614,7 @@
 <h4 id="Attention-guided-drop-mechanism"><a href="#Attention-guided-drop-mechanism" class="headerlink" title="Attention-guided drop mechanism"></a>Attention-guided drop mechanism</h4><p>为了增强正则化效果，作者让关注区域有更高的概率对$V_{root}$进行采样，则</p>
 <div style="width: 70%; margin: auto">
 
-<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210303205952.png" alt="image-20210303205952450"></p>
+<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210303205952.png"></p>
 </div>
 
 <h4 id="Spatial-temporal-ADG"><a href="#Spatial-temporal-ADG" class="headerlink" title="Spatial-temporal ADG"></a>Spatial-temporal ADG</h4><p>作者分别将ADG应用到空间图和时间图。ADG的输入时空特征为$\chi \in \mathbb{R}^{n \times C \times T}$。</p>
@@ -624,34 +624,34 @@
 <p>** 与其他正则化的方法进行对比 **</p>
 <div style="width: 70%; margin: auto">
 
-<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210303214142.png" alt="image-20210303214142884"></p>
+<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210303214142.png"></p>
 </div>
 
 <h2 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h2><h3 id="Decoupling-graph-convolution-DC-GCN"><a href="#Decoupling-graph-convolution-DC-GCN" class="headerlink" title="Decoupling graph convolution (DC-GCN)"></a>Decoupling graph convolution (DC-GCN)</h3><div style="width: 70%; margin: auto">
 
-<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210303215129.png" alt="image-20210303215129880"></p>
+<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210303215129.png"></p>
 </div>
 
 
 <h3 id="Attention-guided-DropGraph-ADG-1"><a href="#Attention-guided-DropGraph-ADG-1" class="headerlink" title="Attention-guided DropGraph (ADG)"></a>Attention-guided DropGraph (ADG)</h3><div style="width: 70%; margin: auto">
 
-<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210303215233.png" alt="image-20210303215233609"></p>
+<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210303215233.png"></p>
 </div>
 
 <div style="width: 70%; margin: auto">
 
-<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210303215257.png" alt="image-20210303215257087"></p>
+<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210303215257.png"></p>
 </div>
 
 
 <h3 id="Comparisons-to-the-State-of-the-Art"><a href="#Comparisons-to-the-State-of-the-Art" class="headerlink" title="Comparisons to the State-of-the-Art"></a>Comparisons to the State-of-the-Art</h3><div style="width: 70%; margin: auto">
 
-<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210303214954.png" alt="image-20210303214954262"></p>
+<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210303214954.png"></p>
 </div>
 
 <div style="width: 70%; margin: auto">
 
-<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210303215015.png" alt="image-20210303215015084"></p>
+<p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210303215015.png"></p>
 </div>
 
       
