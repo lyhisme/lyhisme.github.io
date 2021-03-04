@@ -168,7 +168,7 @@
 <meta property="og:image" content="https://gitee.com/lyhisme/mapdepot/raw/master/20210303215257.png">
 <meta property="og:image" content="https://gitee.com/lyhisme/mapdepot/raw/master/20210303214954.png">
 <meta property="og:image" content="https://gitee.com/lyhisme/mapdepot/raw/master/20210303215015.png">
-<meta property="og:updated_time" content="2021-03-03T15:43:23.740Z">
+<meta property="og:updated_time" content="2021-03-04T08:11:54.946Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Decoupling GCN with DropGraph Module for Skeleton-Based Action Recognition">
 <meta name="twitter:description" content="Paper：https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123690528.pdfGithub：https://github.com/kchengiva/DecoupleGCN-DropGraph  Main contributions$\bullet$作者发现现有的GCN-based Skeleton-based actio">
@@ -463,12 +463,24 @@
                 
               
 
-              <time title="创建时间：2021-03-03 13:30:00 / 修改时间：23:43:23" itemprop="dateCreated datePublished" datetime="2021-03-03T13:30:00+08:00">2021-03-03</time>
+              <time title="创建时间：2021-03-03 13:30:00" itemprop="dateCreated datePublished" datetime="2021-03-03T13:30:00+08:00">2021-03-03</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-03-04 16:11:54" itemprop="dateModified" datetime="2021-03-04T16:11:54+08:00">2021-03-04</time>
               
             
           </span>
@@ -598,7 +610,7 @@
 
 <h4 id="DC-GCN-code："><a href="#DC-GCN-code：" class="headerlink" title="DC-GCN code："></a>DC-GCN code：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">unit_gcn</span><span class="params">(nn.Module)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, in_channels, out_channels, A, groups, num_point, coff_embedding=<span class="number">4</span>, num_subset=<span class="number">3</span>)</span>:</span></span><br><span class="line">        super(unit_gcn, self).__init__()</span><br><span class="line">        self.in_channels = in_channels</span><br><span class="line">        self.out_channels = out_channels</span><br><span class="line">        self.num_point = num_point</span><br><span class="line">        self.groups = groups</span><br><span class="line">        self.num_subset = num_subset</span><br><span class="line">        self.DecoupleA = nn.Parameter(torch.tensor(np.reshape(A.astype(np.float32), [</span><br><span class="line">                                      <span class="number">3</span>, <span class="number">1</span>, num_point, num_point]), dtype=torch.float32, requires_grad=<span class="literal">True</span>).repeat(<span class="number">1</span>, groups, <span class="number">1</span>, <span class="number">1</span>), requires_grad=<span class="literal">True</span>) <span class="comment">#复制groups个带有梯度A</span></span><br><span class="line">...</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x0)</span>:</span></span><br><span class="line">        learn_A = self.DecoupleA.repeat(</span><br><span class="line">            <span class="number">1</span>, self.out_channels // self.groups, <span class="number">1</span>, <span class="number">1</span>)<span class="comment">#再复制out_channels/groups个不带有梯度A (n,c,v,v)</span></span><br><span class="line">        norm_learn_A = torch.cat([self.norm(learn_A[<span class="number">0</span>:<span class="number">1</span>, ...]), self.norm(</span><br><span class="line">            learn_A[<span class="number">1</span>:<span class="number">2</span>, ...]), self.norm(learn_A[<span class="number">2</span>:<span class="number">3</span>, ...])], <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">        x = torch.einsum(</span><br><span class="line">            <span class="string">'nctw,cd-&gt;ndtw'</span>, (x0, self.Linear_weight)).contiguous()</span><br><span class="line">        x = x + self.Linear_bias</span><br><span class="line">        x = self.bn0(x)</span><br><span class="line"></span><br><span class="line">        n, kc, t, v = x.size()</span><br><span class="line">        x = x.view(n, self.num_subset, kc // self.num_subset, t, v)</span><br><span class="line">        x = torch.einsum(<span class="string">'nkctv,kcvw-&gt;nctw'</span>, (x, norm_learn_A)) <span class="comment">#v,w维度上矩阵相乘，k维度上加和</span></span><br><span class="line"></span><br><span class="line">        x = self.bn(x)</span><br><span class="line">        x += self.down(x0)</span><br><span class="line">        x = self.relu(x)</span><br><span class="line">        <span class="keyword">return</span> x</span><br></pre></td></tr></table></figure>
 
-<p>作者讨论了耦合图卷积网络和ST-GCN的分区策略的区别。DC-GC仍然采用了ST-GCN的spatial分区策略（3个分区），其需要在初始化图的过程中增加A的个数，并且将输入x进行了维度变换。</p>
+<p>作者讨论了DC-GCN和ST-GCN的分区策略的区别。DC-GCN仍然采用了ST-GCN的spatial分区策略（3个分区），其需要在初始化图的过程中增加A的个数，并且将输入x进行了维度变换。</p>
 <h3 id="Attention-guided-DropGraph-ADG"><a href="#Attention-guided-DropGraph-ADG" class="headerlink" title="Attention-guided DropGraph (ADG)"></a>Attention-guided DropGraph (ADG)</h3><p><strong>DropGraph的机制是当删除一个节点时，同样删除他的邻居节点集。</strong>其主要有两个参数$\gamma$用于控制样本概率；$K$控制删除邻居节点集的大小。</p>
 <p><strong>实现过程：</strong></p>
 <p>首先用概率为$\gamma$的伯努利分布对图中节点进行采样，然后删除根节点$V_{root}$以及和其最大距离为$K$的姐=节点。</p>
