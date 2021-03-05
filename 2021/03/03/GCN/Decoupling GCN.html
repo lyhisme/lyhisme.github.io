@@ -168,7 +168,7 @@
 <meta property="og:image" content="https://gitee.com/lyhisme/mapdepot/raw/master/20210303215257.png">
 <meta property="og:image" content="https://gitee.com/lyhisme/mapdepot/raw/master/20210303214954.png">
 <meta property="og:image" content="https://gitee.com/lyhisme/mapdepot/raw/master/20210303215015.png">
-<meta property="og:updated_time" content="2021-03-04T08:11:54.946Z">
+<meta property="og:updated_time" content="2021-03-05T06:40:55.521Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Decoupling GCN with DropGraph Module for Skeleton-Based Action Recognition">
 <meta name="twitter:description" content="Paper：https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123690528.pdfGithub：https://github.com/kchengiva/DecoupleGCN-DropGraph  Main contributions$\bullet$作者发现现有的GCN-based Skeleton-based actio">
@@ -480,7 +480,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2021-03-04 16:11:54" itemprop="dateModified" datetime="2021-03-04T16:11:54+08:00">2021-03-04</time>
+                <time title="修改时间：2021-03-05 14:40:55" itemprop="dateModified" datetime="2021-03-05T14:40:55+08:00">2021-03-05</time>
               
             
           </span>
@@ -570,7 +570,7 @@
         <blockquote>
 <p>Paper：<a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123690528.pdf" target="_blank" rel="noopener">https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123690528.pdf</a><br>Github：<a href="https://github.com/kchengiva/DecoupleGCN-DropGraph" target="_blank" rel="noopener">https://github.com/kchengiva/DecoupleGCN-DropGraph</a></p>
 </blockquote>
-<h2 id="Main-contributions"><a href="#Main-contributions" class="headerlink" title="Main contributions"></a>Main contributions</h2><p>$\bullet$作者发现现有的GCN-based Skeleton-based action recognition method都受限于coupling aggregation mechanism（耦合聚合机制）。受CNNs中解耦聚合机制的启发，作者提出解耦图卷积网络**(DeCoupling Graph Convolutional Networks ,DC-GCN)**，在增加少数参数量（5%-10%）的前提下，boost the graph modeling ability。</p>
+<h2 id="Main-contributions"><a href="#Main-contributions" class="headerlink" title="Main contributions"></a>Main contributions</h2><p>$\bullet$作者发现现有的GCN-based Skeleton-based action recognition method都受限于coupling aggregation mechanism（耦合聚合机制）。受CNNs中解耦聚合机制的启发，作者提出解耦图卷积网络(<strong>DeCoupling Graph Convolutional Networks ,DC-GCN</strong>)，在增加少数参数量（5%-10%）的前提下，boost the graph modeling ability。</p>
 <p>$\bullet$另外一个GCN普遍的问题是过拟合，作者提出了DropGraph来丢弃相邻结点中的特征。此外，作者介绍了一种注意力指导丢弃机制<strong>（attention-guide drop mechanism,ADG）</strong>来增强正则化效果。</p>
 <h2 id="Approach"><a href="#Approach" class="headerlink" title="Approach"></a>Approach</h2><h3 id="Decoupling-Graph-Convolutional-Network-DC-GCN"><a href="#Decoupling-Graph-Convolutional-Network-DC-GCN" class="headerlink" title="Decoupling Graph Convolutional Network (DC-GCN)"></a>Decoupling Graph Convolutional Network (DC-GCN)</h3><p>首先考虑单分区集的图卷积情况，实际上做了两个矩阵的乘法，$AX$和$XW$，其中，$AX$根据图的邻接矩阵计算不同骨架间的关系，作者称为<strong>spatial aggregation</strong>，而$XW$计算不同通道间的相关信息，作者称为<strong>channel correlation</strong>。在Fig.(a)中，<strong>spatial aggregation</strong>（$AX$）能被分解为分别计算每一个信道上的聚合。特征$X$的所有通道共享同一个邻接矩阵$A$（以相同颜色绘制）。所有目前的识别方法（ST-GCN，Nolocal adaptive GCN，AS-GCN，Directed-GCN）都采用这种方式，这种方式称为耦合图卷积（类似于退化深度卷积，它的卷积核在信道间被共享，退化深度卷积的表达能力明显弱于标准深度卷积）。</p>
 <div style="width: 70%; margin: auto"> 
@@ -632,7 +632,7 @@
 <p>空间图：作者通过在特征维度和时间维度上使用平均池化方法压缩$\chi$的绝对值，生成每个人体骨架$a_S \in \mathbb{R}^{n}$的spatial attention。接下来在$V_{root}$上采样，然后扩展到空间邻接点，再扩展到所有帧。</p>
 <p>时间图：作者通过在特征维度和骨骼点维度上使用平均池化方法压缩$\chi$的绝对值，生成时间$a_T \in \mathbb{R}^{T}$的spatial attention.接下来在$V_{root}$上采样，然后扩展到时间邻接点，再扩展到全身所有节点。</p>
 <p><strong>注意：</strong>作者在GCN分支和跳连接分支使用ADG，是通过采样Dropblock: A regularization method for convolutional networks中的方法，将$keep_prob$逐渐从1降低到目标值。</p>
-<p>** 与其他正则化的方法进行对比 **</p>
+<p><strong>与其他正则化的方法进行对比</strong></p>
 <div style="width: 70%; margin: auto">
 
 <p><img src="https://gitee.com/lyhisme/mapdepot/raw/master/20210303214142.png"></p>
