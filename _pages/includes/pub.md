@@ -110,8 +110,6 @@ D-TSTAS employs a masked timestamp prediction method to **reduce dependency on t
 </div>
 </div>
 
-
-
 # 📃 Others
 
 
