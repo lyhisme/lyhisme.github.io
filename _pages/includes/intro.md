@@ -20,10 +20,14 @@
     <a href="https://mmcheng.net/cmm/">Prof. Ming-Ming Cheng</a> and 
     <a href="https://houqb.github.io/">Prof. Qibin Hou</a>. 
     <!-- Previously, I conducted three years of master's research at Dalian University of Technology (DUT) under the supervision of Prof. [Lin Feng](http://faculty.dlut.edu.cn/fenglin/zh_CN/index.htm)  and Prof. [Shenglan Liu](http://faculty.dlut.edu.cn/liushenglan/zh_CN/index.htm).   -->
-    Previously, I conducted seven years of bachelor's and master's studies at Dalian University of Technology (DUT).
+    Prior to this, I completed seven years of undergraduate and master's studies at Dalian University of Technology (DUT).
   </p>
   <p>
     My current research interest includes temporal modeling, open-vocabulary understanding and multi-modal learning.
+  </p>
+  <p>
+     I am dedicated to contributing to open-source projects, and my work can be found in <a href="https://github.com/HVision-NKU">HVision-NKU</a>.
+     Additionally, I maintain a list of <a href="https://github.com/Qinying-Liu/Awesome-Open-Vocabulary-Semantic-Segmentation">Awesome Open-Vocabulary Semantic Segmentation</a> resources.
   </p>
   <p>
     If you're interested in my research or have any research-related questions, please feel free to contact me via email at 
