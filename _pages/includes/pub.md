@@ -83,6 +83,7 @@ Additionally, Temporal Segment Regression (TSR) is used to extract segmented enc
 
 [[**Paper**]](https://arxiv.org/pdf/2406.00670) 
 [[**Code**]](https://github.com/HVision-NKU/Cascade-CLIP) 
+[[**中译版**]](https://github.com/HVision-NKU/Cascade-CLIP) 
 [[**集智书童**]](https://mp.weixin.qq.com/s/skF54m3QvVNlxwxWG_XKuA) 
 [[**Poster**]](https://icml.cc/virtual/2024/poster/33865) 
 
