@@ -73,11 +73,30 @@ Additionally, Temporal Segment Regression (TSR) is used to extract segmented enc
 
 ## Conference
 
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICCV 2025</div><img src='images/DenseVLM/DenseVLM_Comparison.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Unbiased Region-Language Alignment for Open-Vocabulary Dense Prediction](https://arxiv.org/pdf/2412.06244)
+
+**Yunheng Li**, Yuxuan Li, Quansheng Zeng, Wenhai Wang, Qibin Hou\#, Ming-Ming Cheng
+
+[[**Paper**]](https://arxiv.org/pdf/2412.06244) 
+[[**Code**]](https://github.com/HVision-NKU/DenseVLM) 
+[[**Huggingface**]](https://huggingface.co/lyhisme/DenseVLM) 
+
+<!-- [[**中译版**]](https://github.com/lyhisme/lyhisme.github.io/blob/main/pdf/24ICML_CascadeCLIP_cn.pdf)  -->
+
+DenseVLM is an unsupervised fine-tuning framework for open-vocabulary dense prediction tasks, which retrieves region-level semantics from a powerful vision-language model and decouples foreground and background features to achieve unbiased region-language alignment and improved open-vocabulary dense prediction.
+
+</div>
+</div>
+
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2024</div><img src='images/ICML24_Cascade-CLIP/Cascade-CLIP_Framework.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Cascade-CLIP: Cascaded Vision-Language Embeddings Alignment for Zero-Shot Semantic Segmentation
-](https://arxiv.org/pdf/2406.00670)
+[Cascade-CLIP: Cascaded Vision-Language Embeddings Alignment for Zero-Shot Semantic Segmentation](https://arxiv.org/pdf/2406.00670)
 
 **Yunheng Li**, Zhong-Yu Li, Quansheng Zeng, Qibin Hou\#, Ming-Ming Cheng
 
