@@ -18,10 +18,8 @@ FineCLIP is an align-before-segment framework that fine-tunes CLIP with dense im
 <!-- [[**Paper**]](https://arxiv.org/pdf/2312.05830)
 [[**Code**]](https://github.com/lyhisme/DeST)  -->
 
-
 </div>
 </div>
-
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge"></div><img src='images/DeST/DeST_FLOPS_Framework.png' alt="sym" width="100%"  >
 </div></div>
@@ -29,7 +27,6 @@ FineCLIP is an align-before-segment framework that fine-tunes CLIP with dense im
 
 [A Decoupled Spatio-Temporal Framework for Skeleton-based Action Segmentation
 ](https://arxiv.org/pdf/2312.05830)
-
 
 **Yunheng Li**, Zhong-Yu Li, Shanghua Gao, Qilong Wang, Qibin Hou\#,
 Ming-Ming Cheng
@@ -48,31 +45,23 @@ Additionally, Temporal Segment Regression (TSR) is used to extract segmented enc
 </div>
 </div>
 
-## Journal
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">IEEE TCSVT 2023</div><img src='images/TCSVT-IDT-GCN/IDT-GCN_Framework.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[Involving Distinguished Temporal Graph Convolutional Networks for Skeleton-Based Temporal Action Segmentation
-](https://ieeexplore.ieee.org/abstract/document/10148994)
-
-**Yunheng Li**, Kai-Yuan Liu, Sheng-Lan Liu\#, Lin Feng, Hong Qiao
-
-[[**Paper**]](https://ieeexplore.ieee.org/abstract/document/10148994) 
-
-
-IDT-GCN employs an Involving Distinction Graph Convolutional Network (ID-GC) to effectively capture both similar and differential dependencies among spatial joints through multiple adaptive topologies. 
-Additionally, Temporal Segment Regression (TSR) is used to model action sequences.
-
-<!-- IDT-GCN employs an Involving Distinction Graph Convolutional Network (ID-GC) to model the relationships between different actions through multiple adaptive topologies. 
-This approach effectively captures both similar and differential dependencies among spatial joints. 
-Additionally, Temporal Segment Regression (TSR) is used to extract segmented encoding features and action boundary representations by modeling action sequences. -->
-
-</div>
-</div>
-
 ## Conference
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2025</div><img src='images/TempSamp-R1/TempSamp-R1_Framework.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[TempSamp-R1: Effective Temporal Sampling with Reinforcement Fine-Tuning for Video LLMs](https://arxiv.org/)
+
+**Yunheng Li**, Yuxuan Li, Quansheng Zeng, Wenhai Wang, Qibin Hou\#, Ming-Ming Cheng
+
+[[**Paper**]](https://arxiv.org/pdf/) 
+[[**Code**]](https://github.com/HVision-NKU/) 
+[[**Huggingface**]](https://huggingface.co/lyhisme/) 
+
+TempSamp-R1 leverages ground-truth annotations as off-policy supervision to provide temporally precise guidance, effectively compensating for the sparsity and misalignment in on-policy solutions in Video LLMs.
+
+</div>
+</div>
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICCV 2025</div><img src='images/DenseVLM/DenseVLM_Comparison.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -85,13 +74,12 @@ Additionally, Temporal Segment Regression (TSR) is used to extract segmented enc
 [[**Code**]](https://github.com/HVision-NKU/DenseVLM) 
 [[**Huggingface**]](https://huggingface.co/lyhisme/DenseVLM) 
 
-<!-- [[**中译版**]](https://github.com/lyhisme/lyhisme.github.io/blob/main/pdf/24ICML_CascadeCLIP_cn.pdf)  -->
+[[**中译版**]](https://github.com/lyhisme/lyhisme.github.io/blob/main/pdf/25ICCV_DenseVLM_cn.pdf) 
 
 DenseVLM is an unsupervised fine-tuning framework for open-vocabulary dense prediction tasks, which retrieves region-level semantics from a powerful vision-language model and decouples foreground and background features to achieve unbiased region-language alignment and improved open-vocabulary dense prediction.
 
 </div>
 </div>
-
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2024</div><img src='images/ICML24_Cascade-CLIP/Cascade-CLIP_Framework.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -113,7 +101,6 @@ Cascade-CLIP aligns vision-language embeddings via **cascaded manner**, effectiv
 </div>
 </div>
 
-
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2023</div><img src='images/CVPR2023_D-TSTAS/D-TSTAS_Framework.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -126,6 +113,27 @@ Kaiyuan Liu\*, **Yunheng Li\***, Shenglan Liu\#, Chenwei Tan, Zihang Shao
 
 D-TSTAS employs a masked timestamp prediction method to **reduce dependency on timestamps** and a center-oriented timestamp expansion technique to **capture semantic-rich motion representations**.
 
+</div>
+</div>
+
+## Journal
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">IEEE TCSVT 2023</div><img src='images/TCSVT-IDT-GCN/IDT-GCN_Framework.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Involving Distinguished Temporal Graph Convolutional Networks for Skeleton-Based Temporal Action Segmentation
+](https://ieeexplore.ieee.org/abstract/document/10148994)
+
+**Yunheng Li**, Kai-Yuan Liu, Sheng-Lan Liu\#, Lin Feng, Hong Qiao
+
+[[**Paper**]](https://ieeexplore.ieee.org/abstract/document/10148994) 
+
+IDT-GCN employs an Involving Distinction Graph Convolutional Network (ID-GC) to effectively capture both similar and differential dependencies among spatial joints through multiple adaptive topologies. 
+Additionally, Temporal Segment Regression (TSR) is used to model action sequences.
+
+<!-- IDT-GCN employs an Involving Distinction Graph Convolutional Network (ID-GC) to model the relationships between different actions through multiple adaptive topologies. 
+This approach effectively captures both similar and differential dependencies among spatial joints. 
+Additionally, Temporal Segment Regression (TSR) is used to extract segmented encoding features and action boundary representations by modeling action sequences. -->
 
 </div>
 </div>
