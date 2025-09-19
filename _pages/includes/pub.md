@@ -74,7 +74,6 @@ TempSamp-R1 leverages ground-truth annotations as off-policy supervision to prov
 [[**Paper**]](https://arxiv.org/pdf/2412.06244) 
 [[**Code**]](https://github.com/HVision-NKU/DenseVLM) 
 [[**Huggingface**]](https://huggingface.co/lyhisme/DenseVLM) 
-
 [[**中译版**]](https://github.com/lyhisme/lyhisme.github.io/blob/main/pdf/25ICCV_DenseVLM_cn.pdf) 
 
 DenseVLM is an unsupervised fine-tuning framework for open-vocabulary dense prediction tasks, which retrieves region-level semantics from a powerful vision-language model and decouples foreground and background features to achieve unbiased region-language alignment and improved open-vocabulary dense prediction.
