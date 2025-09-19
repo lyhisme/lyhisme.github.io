@@ -52,7 +52,8 @@ Additionally, Temporal Segment Regression (TSR) is used to extract segmented enc
 
 [TempSamp-R1: Effective Temporal Sampling with Reinforcement Fine-Tuning for Video LLMs](https://arxiv.org/)
 
-**Yunheng Li**, Yuxuan Li, Quansheng Zeng, Wenhai Wang, Qibin Hou\#, Ming-Ming Cheng
+**Yunheng Li**, JingCheng, Shaoyong Jia, Hangyi Kuang, Shaohui Jiao, Qibin Hou, Ming-Ming Cheng
+
 
 [[**Paper**]](https://arxiv.org/pdf/) 
 [[**Code**]](https://github.com/HVision-NKU/) 
