@@ -50,12 +50,11 @@ Additionally, Temporal Segment Regression (TSR) is used to extract segmented enc
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2025</div><img src='images/TempSamp-R1/TempSamp-R1_Framework.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[TempSamp-R1: Effective Temporal Sampling with Reinforcement Fine-Tuning for Video LLMs](https://arxiv.org/)
+[TempSamp-R1: Effective Temporal Sampling with Reinforcement Fine-Tuning for Video LLMs](https://arxiv.org/abs/2509.18056)
 
-**Yunheng Li**, JingCheng, Shaoyong Jia, Hangyi Kuang, Shaohui Jiao, Qibin Hou, Ming-Ming Cheng
-
-
-[[**Paper**]](https://arxiv.org/pdf/) 
+**Yunheng Li**, JingCheng, Shaoyong Jia, Hangyi Kuang, Shaohui Jiao, Qibin Hou\#, 
+Ming-Ming Cheng
+[[**Paper**]](https://arxiv.org/abs/2509.18056) 
 [[**Code**]](https://github.com/HVision-NKU/) 
 [[**Huggingface**]](https://huggingface.co/lyhisme/) 
 
@@ -76,7 +75,7 @@ TempSamp-R1 leverages ground-truth annotations as off-policy supervision to prov
 [[**Huggingface**]](https://huggingface.co/lyhisme/DenseVLM) 
 [[**中译版**]](https://github.com/lyhisme/lyhisme.github.io/blob/main/pdf/25ICCV_DenseVLM_cn.pdf) 
 
-DenseVLM is an unsupervised fine-tuning framework for open-vocabulary dense prediction tasks, which retrieves region-level semantics from a powerful vision-language model and decouples foreground and background features to achieve unbiased region-language alignment and improved open-vocabulary dense prediction.
+DenseVLM is an unsupervised fine-tuning framework, which retrieves region-level semantics from a powerful vision-language model and decouples foreground and background features to achieve unbiased region-language alignment.
 
 </div>
 </div>
@@ -140,15 +139,21 @@ Additionally, Temporal Segment Regression (TSR) is used to extract segmented enc
 
 # 📃 Others
 
+[Revisiting Efficient Semantic Segmentation: Learning Offsets for Better Spatial and Class Feature Alignment.](https://openaccess.thecvf.com/content/ICCV2025/papers/Zhang_Revisiting_Efficient_Semantic_Segmentation_Learning_Offsets_for_Better_Spatial_and_ICCV_2025_paper.pdf)
+**IEEE ICCV**, ***2025***. 
+
+Shicheng Zhang, **Yunheng Li**, et al.
+[[**Paper**]](https://openaccess.thecvf.com/content/ICCV2025/papers/Zhang_Revisiting_Efficient_Semantic_Segmentation_Learning_Offsets_for_Better_Spatial_and_ICCV_2025_paper.pdf) 
+
 
 [Spatial Focus Attention for Fine-grained Skeleton-based Action Tasks.](https://ieeexplore.ieee.org/abstract/document/9860042)
 **IEEE SPL**, ***2022***. 
-Kaiyuan Liu, **Yunheng Li**, Yuanfeng Xu, et al.
+Kaiyuan Liu, **Yunheng Li**, et al.
 [[**Paper**]](https://ieeexplore.ieee.org/abstract/document/9860042) 
 
 [Double Attention Network Based on Sparse Sampling.](https://www.computer.org/csdl/proceedings-article/icme/2022/09859819/1G9EAL2K8JG)
 **IEEE ICME**, ***2022***. 
-Zhuben Dong, **Yunheng Li**, Yiwei Sun, et al.
+Zhuben Dong, **Yunheng Li**, et al.
 [[**Paper**]](https://www.computer.org/csdl/proceedings-article/icme/2022/09859819/1G9EAL2K8JG) 
 
 [Eicient Two-Step Networks for Temporal Action Segmentation.](https://www.sciencedirect.com/science/article/abs/pii/S0925231221006998)
@@ -164,3 +169,22 @@ Shenglan Liu, Aibin Zhang\*, **Yunheng Li\***, et al.
 [[**Datasets**]](https://shenglanliu.github.io/mcfs-dataset/) 
 
 
+
+## 🛠️ Orobot: Ball-Wheel Self-Balancing Robot
+
+<div class='paper-box' style="align-items: flex-start; gap: 1rem;">
+  <!-- 左侧视频区域 -->
+  <div style="flex: 0 0 40%;"> <!-- 视频占40%宽度 -->
+    <video src="video/robot.mp4" 
+           style="width: 100%; height: auto;" 
+           controls>
+    </video>
+  </div>
+
+  <!-- 右侧文字区域 -->
+  <div style="flex: 1; text-align: justify;">
+    Orobot, my undergraduate project, is a ball-wheel self-balancing robot with a spherical locomotion base. Its core design features three stepper motors (arranged 120° apart at 45° angles) that drive the sphere via omni-wheels, enabling omnidirectional movement.
+    Equipped with an IMU sensor and custom-developed cascaded PID algorithms (500Hz data sampling, 100Hz control loop), it achieves stable single-point balance. I integrated multi-modal interactions: Bluetooth remote control, voice commands, and a built-in speaker for audio feedback.
+    Leading the full development cycle—from mechanical design and PCB layout to embedded programming (STM32) and sensor fusion—the project won 8 national awards, including first prizes at the National University Robot Competition and ICAN International Innovation Contest.
+  </div>
+</div>
