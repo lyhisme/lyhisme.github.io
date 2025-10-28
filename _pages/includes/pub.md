@@ -144,6 +144,7 @@ Additionally, Temporal Segment Regression (TSR) is used to extract segmented enc
 
 Shicheng Zhang, **Yunheng Li**, et al.
 [[**Paper**]](https://openaccess.thecvf.com/content/ICCV2025/papers/Zhang_Revisiting_Efficient_Semantic_Segmentation_Learning_Offsets_for_Better_Spatial_and_ICCV_2025_paper.pdf) 
+[[**Code**]](https://github.com/HVision-NKU/OffSeg) 
 
 
 [Spatial Focus Attention for Fine-grained Skeleton-based Action Tasks.](https://ieeexplore.ieee.org/abstract/document/9860042)
