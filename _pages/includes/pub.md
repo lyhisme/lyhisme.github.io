@@ -3,6 +3,27 @@
 
 ## Preprint
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge"></div><img src='images/ASID/pipeline.png' alt="sym" width="100%"  >
+</div></div>
+<div class='paper-box-text' markdown="1">
+
+[Towards Universal Video MLLMs with Attribute-Structured and Quality-Verified Instructions
+](https://arxiv.org/pdf/2602.13013)
+
+**Yunheng Li**, Hengrui Zhang, Meng-Hao Guo, Wenzhao Gao, Shaoyong Jia, Shaohui Jiao, Qibin Hou1\#, Ming-Ming Cheng
+
+We introduce ASID-Caption, a data-and-model suite for fine-grained audiovisual video understanding, including a large-scale attribute-structured dataset (ASID-1M), a quality-verification pipeline (ASID-Verify), and Omni–based captioning models (ASID-Captioner).
+
+[[**Paper**]](https://arxiv.org/pdf/2602.13013)
+[[**Project**]](https://asid-caption.github.io/)
+[[**Dataset**]](https://huggingface.co/AudioVisual-Caption)
+[[**Demo**]](https://asid-caption.github.io/)
+[[**Code**]](https://github.com/HVision-NKU/ASID-Caption) 
+
+</div>
+</div>
+
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge"></div><img src='images/FineCLIP/FineCLIP_Performance.png' alt="sym" width="100%"  >
 </div></div>
 <div class='paper-box-text' markdown="1">
@@ -21,29 +42,7 @@ FineCLIP is an align-before-segment framework that fine-tunes CLIP with dense im
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge"></div><img src='images/DeST/DeST_FLOPS_Framework.png' alt="sym" width="100%"  >
-</div></div>
-<div class='paper-box-text' markdown="1">
 
-[A Decoupled Spatio-Temporal Framework for Skeleton-based Action Segmentation
-](https://arxiv.org/pdf/2312.05830)
-
-**Yunheng Li**, Zhong-Yu Li, Shanghua Gao, Qilong Wang, Qibin Hou\#,
-Ming-Ming Cheng
-
-[[**Paper**]](https://arxiv.org/pdf/2312.05830)
-[[**Code**]](https://github.com/lyhisme/DeST) 
-
-<!-- DeST adopts decoupled spatio-temporal interaction and joint-decoupled temporal modeling to decouple the cascaded spatio-temporal interaction and learn the discriminative motion pattern of each joint, respectively -->
-
-Decoupled Spatio-Temporal (DeST) framework is the first to decouple spatio-temporal modeling for effective skeleton-based action segmentation.
-
-<!-- IDT-GCN employs an Involving Distinction Graph Convolutional Network (ID-GC) to model the relationships between different actions through multiple adaptive topologies. 
-This approach effectively captures both similar and divergent dependencies among spatial joints. 
-Additionally, Temporal Segment Regression (TSR) is used to extract segmented encoding features and action boundary representations by modeling action sequences. -->
-
-</div>
-</div>
 
 ## Conference
 
@@ -57,6 +56,8 @@ Ming-Ming Cheng
 [[**Paper**]](https://arxiv.org/abs/2509.18056) 
 [[**Code**]](https://github.com/HVision-NKU/) 
 [[**Huggingface**]](https://huggingface.co/lyhisme/) 
+[[**字节跳动技术团队**]](https://mp.weixin.qq.com/s/NwxHvDgMbtSPedOf7aT99g) 
+
 
 TempSamp-R1 leverages ground-truth annotations as off-policy supervision to provide temporally precise guidance, effectively compensating for the sparsity and misalignment in on-policy solutions in Video LLMs.
 
@@ -116,6 +117,30 @@ D-TSTAS employs a masked timestamp prediction method to **reduce dependency on t
 </div>
 
 ## Journal
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">IJCV 2026</div><img src='images/DeST/DeST_FLOPS_Framework.png' alt="sym" width="100%"  >
+</div></div>
+<div class='paper-box-text' markdown="1">
+
+[A Decoupled Spatio-Temporal Framework for Skeleton-based Action Segmentation
+](https://arxiv.org/pdf/2312.05830)
+
+**Yunheng Li**, Zhong-Yu Li, Shanghua Gao, Qilong Wang, Qibin Hou\#,
+Ming-Ming Cheng
+
+[[**Paper**]](https://arxiv.org/pdf/2312.05830)
+[[**Code**]](https://github.com/lyhisme/DeST) 
+
+<!-- DeST adopts decoupled spatio-temporal interaction and joint-decoupled temporal modeling to decouple the cascaded spatio-temporal interaction and learn the discriminative motion pattern of each joint, respectively -->
+
+Decoupled Spatio-Temporal (DeST) framework is the first to decouple spatio-temporal modeling for effective skeleton-based action segmentation.
+
+<!-- IDT-GCN employs an Involving Distinction Graph Convolutional Network (ID-GC) to model the relationships between different actions through multiple adaptive topologies. 
+This approach effectively captures both similar and divergent dependencies among spatial joints. 
+Additionally, Temporal Segment Regression (TSR) is used to extract segmented encoding features and action boundary representations by modeling action sequences. -->
+
+</div>
+</div>
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">IEEE TCSVT 2023</div><img src='images/TCSVT-IDT-GCN/IDT-GCN_Framework.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
